@@ -12,8 +12,10 @@ class API < Sinatra::Base
     content_type :json
     
     {:rooms => [
-                 {:id => 1, :name => "Conference Room", :beacon_id => "abc123", :maj_val => 1, :min_val => 1},
-                 {:id => 2, :name => "Class Room", :beacon_id => "abc123", :maj_val => 1, :min_val => 2}
+                 {:id => B9407f30F5F8466EAFF925556b57FE6D, :name => "Conference Room", 
+                  :beacon_id => "abc123", :maj_val => 1, :min_val => 1},
+                 {:id => B9407F30F5F8466EAFF925556B57FE6D, :name => "Class Room", 
+                  :beacon_id => "abc123", :maj_val => 1, :min_val => 2}
                 ]}.to_json
   end
 
