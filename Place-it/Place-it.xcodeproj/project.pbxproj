@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A72D2D121A028D870067683F /* map-pin-tbi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A72D2D111A028D870067683F /* map-pin-tbi.jpg */; };
+		A72D2D141A0291290067683F /* newyorkmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A72D2D131A0291290067683F /* newyorkmap.jpg */; };
 		A750091919EF265300E3BCFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A750091819EF265300E3BCFA /* main.m */; };
 		A750091C19EF265300E3BCFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A750091B19EF265300E3BCFA /* AppDelegate.m */; };
 		A750091F19EF265300E3BCFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A750091E19EF265300E3BCFA /* ViewController.m */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A72D2D111A028D870067683F /* map-pin-tbi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "map-pin-tbi.jpg"; path = "../../../../../Documents/Documents/HUNTER/Fall 2014/Location Based Services/Place-it/map-pin-tbi.jpg"; sourceTree = "<group>"; };
+		A72D2D131A0291290067683F /* newyorkmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = newyorkmap.jpg; path = ../../../../../Downloads/newyorkmap.jpg; sourceTree = "<group>"; };
 		A750091319EF265300E3BCFA /* Place-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A750091719EF265300E3BCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A750091819EF265300E3BCFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		A750091619EF265300E3BCFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A72D2D131A0291290067683F /* newyorkmap.jpg */,
+				A72D2D111A028D870067683F /* map-pin-tbi.jpg */,
 				A750091719EF265300E3BCFA /* Info.plist */,
 				A750091819EF265300E3BCFA /* main.m */,
 			);
@@ -200,6 +206,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72D2D121A028D870067683F /* map-pin-tbi.jpg in Resources */,
+				A72D2D141A0291290067683F /* newyorkmap.jpg in Resources */,
 				A750092219EF265300E3BCFA /* Main.storyboard in Resources */,
 				A750092719EF265300E3BCFA /* LaunchScreen.xib in Resources */,
 				A750092419EF265300E3BCFA /* Images.xcassets in Resources */,
@@ -344,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Place-it/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Place-it/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +425,7 @@
 				A750093819EF265300E3BCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A750093919EF265300E3BCFA /* Build configuration list for PBXNativeTarget "Place-itTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +434,7 @@
 				A750093B19EF265300E3BCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
