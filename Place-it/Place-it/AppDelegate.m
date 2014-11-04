@@ -13,6 +13,15 @@
 @end
 
 @implementation AppDelegate
+@synthesize window = _window;
+@synthesize navigationController = _navigationController;
+
+- (void)dealloc {
+    [_window release];
+    [_navigationController release];
+    [super dealloc];
+    
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

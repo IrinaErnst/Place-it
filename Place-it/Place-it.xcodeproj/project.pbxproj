@@ -16,6 +16,7 @@
 		A750092419EF265300E3BCFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A750092319EF265300E3BCFA /* Images.xcassets */; };
 		A750092719EF265300E3BCFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750092519EF265300E3BCFA /* LaunchScreen.xib */; };
 		A750093319EF265300E3BCFA /* Place_itTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A750093219EF265300E3BCFA /* Place_itTests.m */; };
+		A7E304921A05660E00CC7F49 /* PlaceitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E304911A05660E00CC7F49 /* PlaceitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		A750092C19EF265300E3BCFA /* Place-itTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Place-itTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A750093119EF265300E3BCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A750093219EF265300E3BCFA /* Place_itTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Place_itTests.m; sourceTree = "<group>"; };
+		A7E304901A05660E00CC7F49 /* PlaceitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceitViewController.h; sourceTree = "<group>"; };
+		A7E304911A05660E00CC7F49 /* PlaceitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 			children = (
 				A750091A19EF265300E3BCFA /* AppDelegate.h */,
 				A750091B19EF265300E3BCFA /* AppDelegate.m */,
+				A7E304901A05660E00CC7F49 /* PlaceitViewController.h */,
+				A7E304911A05660E00CC7F49 /* PlaceitViewController.m */,
 				A750091D19EF265300E3BCFA /* ViewController.h */,
 				A750091E19EF265300E3BCFA /* ViewController.m */,
 				A750092019EF265300E3BCFA /* Main.storyboard */,
@@ -231,6 +236,7 @@
 				A750091F19EF265300E3BCFA /* ViewController.m in Sources */,
 				A750091C19EF265300E3BCFA /* AppDelegate.m in Sources */,
 				A750091919EF265300E3BCFA /* main.m in Sources */,
+				A7E304921A05660E00CC7F49 /* PlaceitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
