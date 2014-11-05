@@ -13,6 +13,7 @@
 		3649C95B1A0984DB0058779D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3649C95A1A0984DB0058779D /* Images.xcassets */; };
 		3649C95E1A0984DB0058779D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3649C95C1A0984DB0058779D /* LaunchScreen.xib */; };
 		3649C96A1A0984DB0058779D /* Place_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9691A0984DB0058779D /* Place_itTests.swift */; };
+		A7A20FB21A0A74F9008B29CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9551A0984DB0058779D /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,9 +162,11 @@
 				TargetAttributes = {
 					3649C94D1A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = B9NU7FF5WD;
 					};
 					3649C9621A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = B9NU7FF5WD;
 						TestTargetID = 3649C94D1A0984DB0058779D;
 					};
 				};
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A20FB21A0A74F9008B29CA /* ViewController.swift in Sources */,
 				3649C96A1A0984DB0058779D /* Place_itTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +362,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -369,6 +375,7 @@
 				INFOPLIST_FILE = "Place-itTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Place-it.app/Place-it";
 			};
 			name = Debug;
@@ -377,6 +384,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -384,6 +393,7 @@
 				INFOPLIST_FILE = "Place-itTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Place-it.app/Place-it";
 			};
 			name = Release;
@@ -407,6 +417,7 @@
 				3649C96F1A0984DB0058779D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3649C9701A0984DB0058779D /* Build configuration list for PBXNativeTarget "Place-itTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +426,7 @@
 				3649C9721A0984DB0058779D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
