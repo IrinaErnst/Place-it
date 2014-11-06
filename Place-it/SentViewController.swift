@@ -9,13 +9,6 @@
 import UIKit
 
 class SentViewController: UIViewController {
-    
-    @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var EditButton: UIButton!
-    @IBOutlet weak var MessagesScrollView: UIScrollView!
-    @IBOutlet weak var MessagesTableView: UITableView!
-    @IBOutlet weak var BackgroundImageView: UIImageView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
