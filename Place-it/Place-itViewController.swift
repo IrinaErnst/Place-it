@@ -9,6 +9,17 @@
 import UIKit
 
 class Place_itViewController: UIViewController {
+    
+    @IBOutlet weak var PhoneNumberLabel: UILabel!
+    @IBOutlet weak var PhoneNumberTextField: UITextField!
+    @IBOutlet weak var PlaceLabel: UILabel!
+    @IBOutlet weak var PlaceTextField: UITextField!
+    @IBOutlet weak var MessageLabel: UILabel!
+    @IBOutlet weak var MessageTextView: UITextView!
+    @IBOutlet weak var CancelButton: UIButton!
+    @IBOutlet weak var SendButton: UIButton!
+    @IBOutlet weak var BackgroundImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
