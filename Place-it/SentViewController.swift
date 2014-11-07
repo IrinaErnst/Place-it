@@ -1,23 +1,19 @@
 //
-//  Place-itViewController.swift
+//  SentViewController.swift
 //  Place-it
 //
-//  Created by Ilona Michalowska on 11/4/14.
+//  Created by Ilona Michalowska on 11/5/14.
 //  Copyright (c) 2014 Ilona Michalowska & Irina Kalashnikova. All rights reserved.
 //
 
 import UIKit
 
-class Place_itViewController: UIViewController {
+class SentViewController: UIViewController {
     
-    @IBOutlet weak var PhoneNumberLabel: UILabel!
-    @IBOutlet weak var PhoneNumberTextField: UITextField!
-    @IBOutlet weak var PlaceLabel: UILabel!
-    @IBOutlet weak var PlaceTextField: UITextField!
-    @IBOutlet weak var MessageLabel: UILabel!
-    @IBOutlet weak var MessageTextView: UITextView!
     @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var SendButton: UIButton!
+    @IBOutlet weak var EditButton: UIButton!
+    @IBOutlet weak var MessagesScrollView: UIScrollView!
+    @IBOutlet weak var MessagesTableView: UITableView!
     @IBOutlet weak var BackgroundImageView: UIImageView!
     
 
