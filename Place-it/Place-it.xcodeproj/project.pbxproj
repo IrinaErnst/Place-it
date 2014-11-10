@@ -9,19 +9,15 @@
 /* Begin PBXBuildFile section */
 		3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9531A0984DB0058779D /* AppDelegate.swift */; };
 		3649C9561A0984DB0058779D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9551A0984DB0058779D /* ViewController.swift */; };
-		3649C9591A0984DB0058779D /* Main.storyboard_1 in Resources */ = {isa = PBXBuildFile; fileRef = 3649C9571A0984DB0058779D /* Main.storyboard_1 */; };
+		3649C9591A0984DB0058779D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3649C9571A0984DB0058779D /* Main.storyboard */; };
 		3649C95B1A0984DB0058779D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3649C95A1A0984DB0058779D /* Images.xcassets */; };
 		3649C95E1A0984DB0058779D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3649C95C1A0984DB0058779D /* LaunchScreen.xib */; };
 		3649C96A1A0984DB0058779D /* Place_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9691A0984DB0058779D /* Place_itTests.swift */; };
-<<<<<<< HEAD:Place-it old/Place-it.xcodeproj/project.pbxproj
-		A7A20FB21A0A74F9008B29CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9551A0984DB0058779D /* ViewController.swift */; };
-=======
 		36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */; };
 		36CE22201A0A832800E6FFDA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE221F1A0A832800E6FFDA /* InboxViewController.swift */; };
 		36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22211A0AD48200E6FFDA /* SentViewController.swift */; };
 		36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */; };
 		36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */; };
->>>>>>> fd7d88dfe0b9c9483b8fa11213f1f656c34adaef:Place-it/Place-it.xcodeproj/project.pbxproj
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +35,7 @@
 		3649C9521A0984DB0058779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3649C9531A0984DB0058779D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3649C9551A0984DB0058779D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3649C9581A0984DB0058779D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/Main.storyboard_1; sourceTree = "<group>"; };
+		3649C9581A0984DB0058779D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3649C95A1A0984DB0058779D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3649C95D1A0984DB0058779D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3649C9631A0984DB0058779D /* Place-itTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Place-itTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,16 +89,12 @@
 			children = (
 				3649C9531A0984DB0058779D /* AppDelegate.swift */,
 				3649C9551A0984DB0058779D /* ViewController.swift */,
-<<<<<<< HEAD:Place-it old/Place-it.xcodeproj/project.pbxproj
-				3649C9571A0984DB0058779D /* Main.storyboard_1 */,
-=======
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
 				36CE221F1A0A832800E6FFDA /* InboxViewController.swift */,
 				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
 				36CE22211A0AD48200E6FFDA /* SentViewController.swift */,
 				36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */,
 				3649C9571A0984DB0058779D /* Main.storyboard */,
->>>>>>> fd7d88dfe0b9c9483b8fa11213f1f656c34adaef:Place-it/Place-it.xcodeproj/project.pbxproj
 				3649C95A1A0984DB0058779D /* Images.xcassets */,
 				3649C95C1A0984DB0058779D /* LaunchScreen.xib */,
 				3649C9511A0984DB0058779D /* Supporting Files */,
@@ -184,11 +176,9 @@
 				TargetAttributes = {
 					3649C94D1A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = B9NU7FF5WD;
 					};
 					3649C9621A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = B9NU7FF5WD;
 						TestTargetID = 3649C94D1A0984DB0058779D;
 					};
 				};
@@ -217,7 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3649C9591A0984DB0058779D /* Main.storyboard_1 in Resources */,
+				3649C9591A0984DB0058779D /* Main.storyboard in Resources */,
 				3649C95E1A0984DB0058779D /* LaunchScreen.xib in Resources */,
 				3649C95B1A0984DB0058779D /* Images.xcassets in Resources */,
 			);
@@ -251,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A20FB21A0A74F9008B29CA /* ViewController.swift in Sources */,
 				3649C96A1A0984DB0058779D /* Place_itTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,12 +256,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3649C9571A0984DB0058779D /* Main.storyboard_1 */ = {
+		3649C9571A0984DB0058779D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3649C9581A0984DB0058779D /* Base */,
 			);
-			name = Main.storyboard_1;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		3649C95C1A0984DB0058779D /* LaunchScreen.xib */ = {
@@ -368,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Place-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -379,7 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Place-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -389,8 +378,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -402,7 +389,6 @@
 				INFOPLIST_FILE = "Place-itTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Place-it.app/Place-it";
 			};
 			name = Debug;
@@ -411,8 +397,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -420,7 +404,6 @@
 				INFOPLIST_FILE = "Place-itTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Place-it.app/Place-it";
 			};
 			name = Release;
