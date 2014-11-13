@@ -1511,7 +1511,7 @@
         <image name="background-temp" width="749" height="498"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jOt-iP-hna"/>
         <segue reference="LxQ-vm-kY8"/>
+        <segue reference="USD-Kc-Y6t"/>
     </inferredMetricsTieBreakers>
 </document>
