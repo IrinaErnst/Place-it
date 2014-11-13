@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Place-it
 //
-//  Created by Ilona Michalowska on 11/4/14.
+//  Created by Ilona Michalowska & Irina Kalashnikovaon 11/4/14.
 //  Copyright (c) 2014 Ilona Michalowska & Irina Kalashnikova. All rights reserved.
 //
 
