@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    var locationManager:CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"), identifier: "Estimotes")
+        
+        locationManager = CLLocationManager()
+        if(locationManager!.respondsToSelector("requestAlwaysAuthorization")){
+            locationManager!.requestAlwaysAuthorization()
+        }
+        locationManager!.delegate = self
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        
+        locationManager!.startMonitoringForRegion(region)
+        locationManager!.startRangingBeaconsInRegion(region)
+        locationManager!.startUpdatingLocation()
+        if(application.respondsToSelector("requesterUserNotificationSettings: ")){
+            application.registerUserNotificationSettings(
+                UIUserNotificationSettings(
+                forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound, categories: nil
+                )
+            )
+        }
         return true
     }
 
@@ -41,6 +61,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
 
+extension AppDelegate: CLLocationManagerDelegate {
+    func beaconNotificationMessage(message: String!){
+        let notification:UILocalNotification = UILocalNotification()
+        notification.alertBody = message
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    func func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+        let viewController:ViewController = window!.rootViewController as ViewController
+        ViewController.beacons = beacons as [CLBeacon]?
+        ViewController.tableView.reloadData()
+        
+        NSLog("didRangeBeacons");
+        var message:String = ""
+        
+        if(beacons.count > 0) {
+            let nearestBeacon:CLBeacon = beacons[0] as CLBeacon
+            
+            if(nearestBeacon:proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown){
+                return;
+            }
+            lastProximity = nearestBeacon.proximity;
+            
+            switch nearestBeacon.proximity {
+            case CLProximity.Far: message = "Proximity: Far"
+            case CLProximity.Near: message = "Proximity: Near"
+            case CLProximity.Immediate: message = "Proximity: Immediate"
+            case CLProximity.Unknown: return
+            }
+        } else {
+            message = "No beacons"
+        }
+        
+        NSLog("%@", message)
+        beaconNotificationMessage(message)
+    }
+    
 }
 

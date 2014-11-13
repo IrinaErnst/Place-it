@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Detect beacons and display color/msg of the closest one</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Detect beacons </string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
