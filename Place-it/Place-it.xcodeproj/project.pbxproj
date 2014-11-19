@@ -22,7 +22,6 @@
 		A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */; };
 		A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFA1A14DA5A004E6019 /* Foundation.framework */; };
 		A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */; };
-		A7383AFF1A14DA98004E6019 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7383AFF1A14DA98004E6019 /* libEstimoteSDK.a in Frameworks */,
 				A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */,
 				A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */,
 				A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */,

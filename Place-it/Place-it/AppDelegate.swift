@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
 }
 
+/*
 extension AppDelegate: CLLocationManagerDelegate {
     func beaconNotificationMessage(message: String!){
         let notification:UILocalNotification = UILocalNotification()
@@ -100,5 +101,5 @@ extension AppDelegate: CLLocationManagerDelegate {
         beaconNotificationMessage(message)
     }
     
-}
+}*/
 
