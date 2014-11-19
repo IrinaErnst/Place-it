@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate{
+class Place_itViewController: UIViewController {
     
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var PhoneNumberTextField: UITextField!
@@ -30,42 +30,6 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // Events
-    @IBAction func SendButton_Clicked(sender: UIButton) {
-        MessageMgr.addMessage(PhoneNumberTextField.text, content_arg: MessageTextView.text)
-        
-        // Get rid of the keyboard:
-        self.view.endEditing(true)
-        
-        // Clear text fields
-        PhoneNumberTextField.text = "Phone Number"
-        MessageTextView.text = "New Message"
-        
-        // Once the message is sent, jump back to the first view
-        // IMPLEMENT!
-        // self.tabBarController.selectedIndex = 0
-        
-        //println("Send Button was clicked.")
-    }
-    
-    
-    
-    // IOS Touch Functions
-    // keyboard goes away when click outside of text field
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
-    
-    
-    
-    // UITextFieldDelegate optional function (if a person press Return key)
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-        
-        textField.resignFirstResponder()
-        return true
-    // called when 'return' key pressed. return NO to ignore.
     }
     
 
