@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SentViewController: UIViewController {
+class SentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var EditButton: UIButton!
-    @IBOutlet weak var MessagesScrollView: UIScrollView!
     @IBOutlet weak var MessagesTableView: UITableView!
-    @IBOutlet weak var BackgroundImageView: UIImageView!
+   
     
 
     override func viewDidLoad() {
@@ -28,6 +27,45 @@ class SentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Returning to View--Update the list of messages:
+   override func viewWillAppear(animated: Bool) {
+        MessagesTableView.reloadData()
+    }
+    
+    // Optional function for UITableViewDelegate--Delete functionality for the table:
+    // After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
+    // Not called for edit actions using UITableViewRowAction - the action's handler will be invoked instead
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            MessageMgr.messages.removeAtIndex(indexPath.row)
+            
+            //Update the Table View:
+            MessagesTableView.reloadData()
+            
+            //println("Delete this row")
+        }
+    }
+    
+    
+    
+    // Mandatory function for UITableViewDataSource (tell the table how many rows it needs to render):
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return MessageMgr.messages.count
+    }
+    
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
+    // Mandatory function for UITableViewDataSource (create cells in the table)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+        
+        // might be incorrect...
+        cell.textLabel.text = MessageMgr.messages[indexPath.row].receiver
+        cell.detailTextLabel?.text = MessageMgr.messages[indexPath.row].content
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
