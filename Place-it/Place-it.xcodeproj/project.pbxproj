@@ -112,8 +112,8 @@
 				364E58E21A1D146600A23EAC /* MessageManager.swift */,
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
 				36CE221F1A0A832800E6FFDA /* InboxViewController.swift */,
-				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
 				36CE22211A0AD48200E6FFDA /* SentViewController.swift */,
+				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
 				36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */,
 				3649C9571A0984DB0058779D /* Main.storyboard */,
 				3649C95A1A0984DB0058779D /* Images.xcassets */,
@@ -197,6 +197,7 @@
 				TargetAttributes = {
 					3649C94D1A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = AWFBE8QD87;
 					};
 					3649C9621A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
@@ -378,6 +379,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Place-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -390,6 +393,7 @@
 					"/Users/irinakalashnikova/src/GitHub/iOS-SDK/EstimoteSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -397,6 +401,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Place-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,6 +411,7 @@
 					"/Users/irinakalashnikova/src/GitHub/iOS-SDK/EstimoteSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

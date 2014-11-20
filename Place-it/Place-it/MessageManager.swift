@@ -8,11 +8,15 @@
 
 import UIKit
 
-var MessageMgr: MessageManager = MessageManager()
+var sentMessageMgr: MessageManager = MessageManager()
+var draftsMessageMgr: MessageManager = MessageManager()
+var trashMessageMgr: MessageManager = MessageManager()
 
 struct message{
-    var receiver:String = "Not specified"
-    var content:String = "Not specified"
+    var receiver: String = "Not specified"
+    var place: String = "Not specified"
+    var content: String = "Not specified"
+    // optionally add date (time of message delivery)
 }
 
 class MessageManager: NSObject {
@@ -21,8 +25,8 @@ class MessageManager: NSObject {
     var messages = [message]()
     
     // Add elements to the messages array
-    func addMessage(receiver_arg: String, content_arg: String){
-    messages.append(message(receiver:receiver_arg, content:content_arg))
+    func addMessage(receiver_arg: String, place_arg: String, content_arg: String){
+        messages.append(message(receiver:receiver_arg, place: place_arg, content:content_arg))
     }
     
 }

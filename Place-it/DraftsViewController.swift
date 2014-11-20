@@ -8,13 +8,13 @@
 
 import UIKit
 
-class DraftsViewController: UIViewController {
+class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var EditButton: UIButton!
-    @IBOutlet weak var MessagesScrollView: UIScrollView!
-    @IBOutlet weak var MessagesTableView: UITableView!
-    @IBOutlet weak var BackgroundImageView: UIImageView!
+    @IBOutlet weak var DraftsMessagesTableView: UITableView!
+    @IBOutlet weak var DraftsLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +22,58 @@ class DraftsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    // Returning to View--Update the list of messages:
+    override func viewWillAppear(animated: Bool) {
+        DraftsMessagesTableView.reloadData()
+    }
+    
+    
+    // Optional function for UITableViewDelegate--Delete functionality for the table:
+    // After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
+    // Not called for edit actions using UITableViewRowAction - the action's handler will be invoked instead
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            
+            var tempMessage: message = draftsMessageMgr.messages.removeAtIndex(indexPath.row)
+            
+            // Append tempMessage to Trash array
+            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, content_arg: tempMessage.content)
+            
+            //Update the Table View:
+            DraftsMessagesTableView.reloadData()
+        }
+    }
+    
+    
+    // Mandatory function for UITableViewDataSource (tell the table how many rows it needs to render):
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return draftsMessageMgr.messages.count
+    }
+    
+    
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
+    
+    // Mandatory function for UITableViewDataSource (create cells in the table)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell_d: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+        
+        // might be incorrect...
+        cell_d.textLabel.text = draftsMessageMgr.messages[indexPath.row].receiver
+        cell_d.detailTextLabel?.text = draftsMessageMgr.messages[indexPath.row].content
+        //need to do sth with the place member variable & optionally date
+        
+        return cell_d
+    }
+    
     /*
     // MARK: - Navigation
 

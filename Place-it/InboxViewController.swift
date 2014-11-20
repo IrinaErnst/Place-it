@@ -12,10 +12,10 @@ class InboxViewController: UIViewController {
     
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var EditButton: UIButton!
-    @IBOutlet weak var MessagesScrollView: UIScrollView!
-    @IBOutlet weak var MessagesTableView: UITableView!
-    @IBOutlet weak var BackgroundImageView: UIImageView!
+    @IBOutlet weak var InboxLabel: UILabel!
+    @IBOutlet weak var InboxMessagesTableView: UITableView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

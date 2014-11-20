@@ -13,7 +13,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var EditButton: UIButton!
     @IBOutlet weak var MessagesTableView: UITableView!
-   
+    @IBOutlet weak var SentLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -22,22 +22,29 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     // Returning to View--Update the list of messages:
-   override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         MessagesTableView.reloadData()
     }
+    
     
     // Optional function for UITableViewDelegate--Delete functionality for the table:
     // After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
     // Not called for edit actions using UITableViewRowAction - the action's handler will be invoked instead
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
-            MessageMgr.messages.removeAtIndex(indexPath.row)
+            
+            var tempMessage: message = sentMessageMgr.messages.removeAtIndex(indexPath.row)
+            
+            // Append tempMessage to Trash array
+            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, content_arg: tempMessage.content)
             
             //Update the Table View:
             MessagesTableView.reloadData()
@@ -47,26 +54,29 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
     // Mandatory function for UITableViewDataSource (tell the table how many rows it needs to render):
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return MessageMgr.messages.count
+        return sentMessageMgr.messages.count
     }
+    
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
     
     // Mandatory function for UITableViewDataSource (create cells in the table)
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         // might be incorrect...
-        cell.textLabel.text = MessageMgr.messages[indexPath.row].receiver
-        cell.detailTextLabel?.text = MessageMgr.messages[indexPath.row].content
+        cell.textLabel.text = sentMessageMgr.messages[indexPath.row].receiver
+        cell.detailTextLabel?.text = sentMessageMgr.messages[indexPath.row].content
+        //need to do sth with the place member variable & optionally date
         
         return cell
     }
 
+    
     /*
     // MARK: - Navigation
 

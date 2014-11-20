@@ -34,14 +34,15 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     // Events
     @IBAction func SendButton_Clicked(sender: UIButton) {
-        MessageMgr.addMessage(PhoneNumberTextField.text, content_arg: MessageTextView.text)
+        sentMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text,content_arg: MessageTextView.text)
         
         // Get rid of the keyboard:
         self.view.endEditing(true)
         
         // Clear text fields
-        PhoneNumberTextField.text = "Phone Number"
-        MessageTextView.text = "New Message"
+        PhoneNumberTextField.text = "Enter Phone Number"
+        PlaceTextField.text = "Enter Place"
+        MessageTextView.text = "Enter New Message"
         
         // Once the message is sent, jump back to the first view
         // IMPLEMENT!
@@ -49,6 +50,26 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         //println("Send Button was clicked.")
     }
+    
+    @IBAction func CancelButton_Clicked(sender: UIButton) {
+        
+        if PhoneNumberTextField.text != "Enter Phone Number" || PlaceTextField.text != "Enter Place" || MessageTextView.text != "Enter New Message"{
+            draftsMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, content_arg: MessageTextView.text)
+        }
+        
+        // Get rid of the keyboard:
+        self.view.endEditing(true)
+        
+        // Clear text fields
+        PhoneNumberTextField.text = "Enter Phone Number"
+        PlaceTextField.text = "Enter Place"
+        MessageTextView.text = "Enter New Message"
+        
+        // Once the message is saved in Drafts, jump back to the first view
+        // IMPLEMENT!
+        // self.tabBarController.selectedIndex = 0
+    }
+    
     
     
     
