@@ -1,3 +1,2 @@
-xcodeproj 'Place-it/Place-it.xcodeproj'
 platform :ios 
-dependency 'AFNetworking', '0.9'
+dependancy 'AeNetworking', '0.9'

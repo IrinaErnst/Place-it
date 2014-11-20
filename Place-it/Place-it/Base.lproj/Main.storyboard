@@ -517,9 +517,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="155-4l-KmH">
-                                        <variation key="widthClass=compact" constant="100"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="125" id="155-4l-KmH"/>
                                     <constraint firstAttribute="height" constant="40" id="sLD-BK-XK0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -548,9 +546,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="0q3-Be-an0">
-                                        <variation key="widthClass=compact" constant="100"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="125" id="0q3-Be-an0"/>
                                     <constraint firstAttribute="height" constant="40" id="gvV-nx-t11"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -577,14 +573,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soc-dX-8LM" userLabel="MessageView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pL-yE-zmN" userLabel="MessageLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pL-yE-zmN" userLabel="MessageLabel">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="nvx-uh-rFL"/>
                                             <constraint firstAttribute="height" constant="30" id="txY-0F-lG7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -605,9 +601,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="XWt-i8-kmX"/>
-                                            <constraint firstAttribute="width" constant="325" id="uXB-gy-f91">
-                                                <variation key="widthClass=compact" constant="315"/>
-                                            </constraint>
+                                            <constraint firstAttribute="width" constant="325" id="uXB-gy-f91"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -617,8 +611,7 @@
                                                 <exclude reference="uXB-gy-f91"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="35" y="70" width="305" height="150"/>
+                                        <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="XWt-i8-kmX"/>
                                                 <include reference="uXB-gy-f91"/>
@@ -632,16 +625,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="MH7-A7-ydS"/>
                                     <constraint firstAttribute="width" constant="365" id="Xlo-X7-TkR"/>
-                                    <constraint firstItem="oSB-U1-Lxa" firstAttribute="leading" secondItem="soc-dX-8LM" secondAttribute="leading" constant="20" id="Yqb-tY-1rw">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
+                                    <constraint firstItem="oSB-U1-Lxa" firstAttribute="leading" secondItem="soc-dX-8LM" secondAttribute="leading" constant="20" id="Yqb-tY-1rw"/>
                                     <constraint firstItem="oSB-U1-Lxa" firstAttribute="top" secondItem="5pL-yE-zmN" secondAttribute="bottom" constant="20" id="bQE-6j-7Np"/>
-                                    <constraint firstItem="5pL-yE-zmN" firstAttribute="leading" secondItem="soc-dX-8LM" secondAttribute="leading" constant="20" id="kWx-fx-ni4">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="oSB-U1-Lxa" secondAttribute="trailing" constant="25" id="loa-B7-eGM">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
+                                    <constraint firstItem="5pL-yE-zmN" firstAttribute="leading" secondItem="soc-dX-8LM" secondAttribute="leading" constant="20" id="kWx-fx-ni4"/>
+                                    <constraint firstAttribute="trailing" secondItem="oSB-U1-Lxa" secondAttribute="trailing" constant="20" id="loa-B7-eGM"/>
                                     <constraint firstItem="5pL-yE-zmN" firstAttribute="top" secondItem="soc-dX-8LM" secondAttribute="top" constant="20" id="zLl-dl-B8d"/>
                                 </constraints>
                                 <variation key="default">
@@ -678,14 +665,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cy-WW-ToT" userLabel="PhonePlaceView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iju-pH-vwV" userLabel="PlaceLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iju-pH-vwV" userLabel="PlaceLabel">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="mDj-Pt-76K"/>
                                             <constraint firstAttribute="height" constant="30" id="zp9-jv-i1g"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -704,9 +691,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Place" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-m4-zuH" userLabel="PlaceRoundStyleTextField">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="230" id="9ir-Ir-aDB">
-                                                <variation key="widthClass=compact" constant="210"/>
-                                            </constraint>
+                                            <constraint firstAttribute="width" constant="230" id="9ir-Ir-aDB"/>
                                             <constraint firstAttribute="height" constant="30" id="Ou0-Xa-HGj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -724,14 +709,14 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-be-nk7" userLabel="Phone#Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-be-nk7" userLabel="Phone#Label">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="HdE-UX-Xky"/>
                                             <constraint firstAttribute="height" constant="30" id="fd7-Qg-mPN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -750,9 +735,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Phone Number" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-Ky-e4p" userLabel="Phone#RoundStyleTextField">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="230" id="dTp-LO-Lxv">
-                                                <variation key="widthClass=compact" constant="210"/>
-                                            </constraint>
+                                            <constraint firstAttribute="width" constant="230" id="dTp-LO-Lxv"/>
                                             <constraint firstAttribute="height" constant="30" id="nn7-QS-2RZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -777,22 +760,14 @@
                                 <constraints>
                                     <constraint firstItem="Iju-pH-vwV" firstAttribute="top" secondItem="8mf-be-nk7" secondAttribute="bottom" constant="20" id="2Cq-mP-QOl"/>
                                     <constraint firstItem="8mf-be-nk7" firstAttribute="top" secondItem="1Cy-WW-ToT" secondAttribute="top" constant="20" id="40m-Ji-XQh"/>
-                                    <constraint firstItem="8mf-be-nk7" firstAttribute="leading" secondItem="1Cy-WW-ToT" secondAttribute="leading" constant="20" id="6ci-li-vO3">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="zlc-Ky-e4p" secondAttribute="trailing" constant="20" id="AuW-JP-QyM">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
+                                    <constraint firstItem="8mf-be-nk7" firstAttribute="leading" secondItem="1Cy-WW-ToT" secondAttribute="leading" constant="20" id="6ci-li-vO3"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlc-Ky-e4p" secondAttribute="trailing" constant="20" id="AuW-JP-QyM"/>
                                     <constraint firstAttribute="width" constant="365" id="DY9-vt-RPB"/>
                                     <constraint firstItem="Ztv-m4-zuH" firstAttribute="top" secondItem="zlc-Ky-e4p" secondAttribute="bottom" constant="20" id="RI5-vg-ysN"/>
                                     <constraint firstAttribute="height" constant="120" id="bcV-fH-dyt"/>
                                     <constraint firstItem="zlc-Ky-e4p" firstAttribute="top" secondItem="1Cy-WW-ToT" secondAttribute="top" constant="20" id="cc2-N8-bJa"/>
-                                    <constraint firstItem="Iju-pH-vwV" firstAttribute="leading" secondItem="1Cy-WW-ToT" secondAttribute="leading" constant="20" id="fGf-ix-iWB">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="Ztv-m4-zuH" secondAttribute="trailing" constant="20" id="i2G-Vq-3ZO">
-                                        <variation key="widthClass=compact" constant="35"/>
-                                    </constraint>
+                                    <constraint firstItem="Iju-pH-vwV" firstAttribute="leading" secondItem="1Cy-WW-ToT" secondAttribute="leading" constant="20" id="fGf-ix-iWB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ztv-m4-zuH" secondAttribute="trailing" constant="20" id="i2G-Vq-3ZO"/>
                                     <constraint firstItem="zlc-Ky-e4p" firstAttribute="leading" secondItem="8mf-be-nk7" secondAttribute="trailing" constant="20" id="vZJ-Yn-DTd"/>
                                     <constraint firstItem="Ztv-m4-zuH" firstAttribute="leading" secondItem="Iju-pH-vwV" secondAttribute="trailing" constant="20" id="zGg-eL-OZ1"/>
                                 </constraints>
@@ -1375,6 +1350,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2c9-ZA-QnC"/>
-        <segue reference="A4c-af-cSW"/>
+        <segue reference="jOt-iP-hna"/>
     </inferredMetricsTieBreakers>
 </document>
