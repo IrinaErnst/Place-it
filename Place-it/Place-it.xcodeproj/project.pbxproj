@@ -25,7 +25,6 @@
 		A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFA1A14DA5A004E6019 /* Foundation.framework */; };
 		A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */; };
 		A77D37201A1D671000AE100D /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */; };
-		A77D37241A1E2B3D00AE100D /* Place-itHerokuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D37231A1E2B3D00AE100D /* Place-itHerokuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK.a; path = "../../../GitHub/iOS-SDK/EstimoteSDK/libEstimoteSDK.a"; sourceTree = "<group>"; };
 		A77D37211A1E22F200AE100D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A77D37231A1E2B3D00AE100D /* Place-itHerokuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place-itHerokuTableViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 				3649C9551A0984DB0058779D /* ViewController.swift */,
 				364E58E21A1D146600A23EAC /* MessageManager.swift */,
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
-				A77D37231A1E2B3D00AE100D /* Place-itHerokuTableViewController.swift */,
 				36CE221F1A0A832800E6FFDA /* InboxViewController.swift */,
 				36CE22211A0AD48200E6FFDA /* SentViewController.swift */,
 				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
@@ -319,7 +316,6 @@
 				36CE22201A0A832800E6FFDA /* InboxViewController.swift in Sources */,
 				36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */,
 				36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */,
-				A77D37241A1E2B3D00AE100D /* Place-itHerokuTableViewController.swift in Sources */,
 				3649C9561A0984DB0058779D /* ViewController.swift in Sources */,
 				3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */,
 				36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */,
