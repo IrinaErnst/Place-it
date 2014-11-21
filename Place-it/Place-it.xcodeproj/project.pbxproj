@@ -24,7 +24,6 @@
 		A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */; };
 		A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFA1A14DA5A004E6019 /* Foundation.framework */; };
 		A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */; };
-		A77D37201A1D671000AE100D /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,6 @@
 		A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A7383AFA1A14DA5A004E6019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK.a; path = "../../../GitHub/iOS-SDK/EstimoteSDK/libEstimoteSDK.a"; sourceTree = "<group>"; };
 		A77D37211A1E22F200AE100D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -70,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A77D37201A1D671000AE100D /* libEstimoteSDK.a in Frameworks */,
 				A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */,
 				A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */,
 				A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */,
@@ -93,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				A77D37211A1E22F200AE100D /* CoreData.framework */,
-				A7383AFE1A14DA98004E6019 /* libEstimoteSDK.a */,
 				A7383AFC1A14DA6F004E6019 /* SystemConfiguration.framework */,
 				A7383AFA1A14DA5A004E6019 /* Foundation.framework */,
 				A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */,
