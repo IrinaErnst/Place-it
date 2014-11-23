@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var PhoneNumberLabel: UILabel!
@@ -20,13 +22,23 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var SendButton: UIButton!
     @IBOutlet weak var BackgroundImageView: UIImageView!
     
+    var toPass: message = message()
+    //var toPass: String!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PhoneNumberTextField.text = toPass.receiver
+        PlaceTextField.text = toPass.place
+        MessageTextView.text = toPass.content
+
 
         // Do any additional setup after loading the view.
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,6 +101,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     // called when 'return' key pressed. return NO to ignore.
     }
     
+   
 
     /*
     // MARK: - Navigation

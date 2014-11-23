@@ -15,6 +15,8 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var DraftsMessagesTableView: UITableView!
     @IBOutlet weak var DraftsLabel: UILabel!
     
+    var messageToEdit: message = message()
+    var indexToEdit: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,15 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
+        if (segue.identifier == "toPlaceItViewCtrlr") {
+            var svc = segue!.destinationViewController as Place_itViewController
+            svc.toPass = messageToEdit
+        }
     }
     
     
@@ -50,6 +61,36 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             DraftsMessagesTableView.reloadData()
         }
     }
+    
+    // Select & Edit
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        // Get the row data for the selected row
+        messageToEdit = draftsMessageMgr.messages[indexPath.row]
+        indexToEdit = indexPath.row
+        
+        var alert: UIAlertView = UIAlertView()
+        alert.title = "Message selected"
+        //alert.message = "Now you can Edit"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+        
+    }
+    
+   
+    // Events
+    @IBAction func EditButton_Clicked(sender: AnyObject) {
+        
+        //ViewController?.
+            //popViewControllerAnimated(true)
+        
+        // Delete message from drafts
+        messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
+
+        performSegueWithIdentifier("toPlaceItViewCtrlr", sender: self)
+    }
+ 
+    
     
     
     // Mandatory function for UITableViewDataSource (tell the table how many rows it needs to render):
