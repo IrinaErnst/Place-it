@@ -80,10 +80,14 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     // Events
     @IBAction func EditButton_Clicked(sender: AnyObject) {
+        // if message is no selected: display notification: select message
         
-        //ViewController?.
-            //popViewControllerAnimated(true)
+        /*var alert: UIAlertView = UIAlertView()
+        alert.title = "Select Message!"
+        alert.addButtonWithTitle("Ok")
+        alert.show()*/
         
+        // else if message is selected, do the following:
         // Delete message from drafts
         messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
 
