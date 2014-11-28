@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+// test comment
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
