@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
     var locationManager:CLLocationManager?
+    var lastProximity: CLProximity?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -84,10 +85,10 @@ extension AppDelegate: CLLocationManagerDelegate {
         if(beacons.count > 0) {
             let nearestBeacon:CLBeacon = beacons[0] as CLBeacon
             
-            /*if(nearestBeacon:proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown){
+            if(nearestBeacon.proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown){
                 return;
             }
-            lastProximity = nearestBeacon.proximity;*/
+            lastProximity = nearestBeacon.proximity;
             
             switch nearestBeacon.proximity {
             case CLProximity.Far: message = "You are far away from the beacon"
@@ -102,5 +103,6 @@ extension AppDelegate: CLLocationManagerDelegate {
         NSLog("%@", message)
         beaconNotificationMessage(message)
     }
+    
 }
 
