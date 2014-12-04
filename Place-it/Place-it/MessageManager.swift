@@ -7,6 +7,20 @@
 //
 
 import UIKit
+import CoreData
+
+/*
+@IBOutlet var reciver: UITextField!
+@IBOutlet var place: UITextField!
+@IBOutlet var content: UITextField!
+
+@IBAction func btnCancel(){
+    
+}
+
+@IBAction func btnSend(){
+    
+}*/
 
 var inboxMessageMgr: MessageManager = MessageManager()
 var sentMessageMgr: MessageManager = MessageManager()
