@@ -112,7 +112,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell_d: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         // might be incorrect...
-        cell_d.textLabel.text = draftsMessageMgr.messages[indexPath.row].receiver
+        cell_d.textLabel?.text = draftsMessageMgr.messages[indexPath.row].receiver
         cell_d.detailTextLabel?.text = draftsMessageMgr.messages[indexPath.row].content
         //need to do sth with the place member variable & optionally date
         

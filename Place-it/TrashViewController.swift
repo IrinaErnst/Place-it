@@ -65,7 +65,7 @@ class TrashViewController: UIViewController {
         let cell_t: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         // might be incorrect...
-        cell_t.textLabel.text = trashMessageMgr.messages[indexPath.row].receiver
+        cell_t.textLabel?.text = trashMessageMgr.messages[indexPath.row].receiver
         cell_t.detailTextLabel?.text = trashMessageMgr.messages[indexPath.row].content
         //need to do sth with the place member variable & optionally date
         

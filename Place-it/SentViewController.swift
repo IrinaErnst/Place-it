@@ -69,7 +69,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         // might be incorrect...
-        cell.textLabel.text = sentMessageMgr.messages[indexPath.row].receiver
+        cell.textLabel?.text = sentMessageMgr.messages[indexPath.row].receiver
         cell.detailTextLabel?.text = sentMessageMgr.messages[indexPath.row].content
         //need to do sth with the place member variable & optionally date
         
