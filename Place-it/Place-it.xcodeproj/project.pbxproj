@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FA4EB0667A795B75E53B1C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 735571BD0BAA1F5AA0E6A091 /* libPods.a */; };
+		362DAF701A30FAD100CE4A6A /* To-FromVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DAF6F1A30FAD100CE4A6A /* To-FromVC.swift */; };
 		3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9531A0984DB0058779D /* AppDelegate.swift */; };
 		3649C9561A0984DB0058779D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9551A0984DB0058779D /* ViewController.swift */; };
 		3649C9591A0984DB0058779D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3649C9571A0984DB0058779D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0E4D832012D34F5EC13798BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		362DAF6F1A30FAD100CE4A6A /* To-FromVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "To-FromVC.swift"; path = "../../To-FromVC.swift"; sourceTree = "<group>"; };
 		3649C94E1A0984DB0058779D /* Place-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3649C9521A0984DB0058779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3649C9531A0984DB0058779D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				36CE22211A0AD48200E6FFDA /* SentViewController.swift */,
 				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
 				36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */,
+				362DAF6F1A30FAD100CE4A6A /* To-FromVC.swift */,
 				3649C9571A0984DB0058779D /* Main.storyboard */,
 				3649C95A1A0984DB0058779D /* Images.xcassets */,
 				3649C95C1A0984DB0058779D /* LaunchScreen.xib */,
@@ -316,6 +319,7 @@
 				3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */,
 				36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */,
 				36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */,
+				362DAF701A30FAD100CE4A6A /* To-FromVC.swift in Sources */,
 				364E58E31A1D146600A23EAC /* MessageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
