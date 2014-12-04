@@ -80,7 +80,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     // Events
     @IBAction func EditButton_Clicked(sender: AnyObject) {
-        // if message is no selected: display notification: select message
+        // if message is not selected: display notification: select message
         
         /*var alert: UIAlertView = UIAlertView()
         alert.title = "Select Message!"

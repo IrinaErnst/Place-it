@@ -953,6 +953,25 @@
                                     <segue destination="vXZ-lx-hvc" kind="presentation" id="AHy-fz-qzv"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="goW-gy-wmP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="c c g " id="W37-uB-tcD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W37-uB-tcD" id="hs9-BC-1hI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-PY-iQ1" userLabel="InboxLabel">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aA-X0-9kF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -961,7 +980,7 @@
                                     <constraint firstAttribute="width" constant="125" id="oL1-Jk-73T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit">
+                                <state key="normal" title="View">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -978,16 +997,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="goW-gy-wmP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-PY-iQ1" userLabel="InboxLabel">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1007,9 +1016,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7fl-M0-glG"/>
-                                <exclude reference="7aA-X0-9kF"/>
                                 <exclude reference="goW-gy-wmP"/>
                                 <exclude reference="Jc7-PY-iQ1"/>
+                                <exclude reference="7aA-X0-9kF"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="CX0-qz-CVf"/>
@@ -1029,9 +1038,9 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7fl-M0-glG"/>
-                                <include reference="7aA-X0-9kF"/>
                                 <include reference="goW-gy-wmP"/>
                                 <include reference="Jc7-PY-iQ1"/>
+                                <include reference="7aA-X0-9kF"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="CX0-qz-CVf"/>
@@ -1108,7 +1117,7 @@
                                     <constraint firstAttribute="width" constant="125" id="hwg-7t-YBJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit">
+                                <state key="normal" title="View">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1248,6 +1257,20 @@
                                     <segue destination="vXZ-lx-hvc" kind="presentation" id="jOt-iP-hna"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-fT-lMf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OH1-KA-NcZ" id="9vG-fW-Y9C"/>
+                                    <outlet property="delegate" destination="OH1-KA-NcZ" id="j4Q-JH-Nh3"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-RU-mU4" userLabel="TrashLabel">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjh-l5-KLA">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1256,7 +1279,7 @@
                                     <constraint firstAttribute="width" constant="125" id="i3b-qI-aYf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit">
+                                <state key="normal" title="Move to...">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1273,20 +1296,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-fT-lMf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="OH1-KA-NcZ" id="9vG-fW-Y9C"/>
-                                    <outlet property="delegate" destination="OH1-KA-NcZ" id="j4Q-JH-Nh3"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-RU-mU4" userLabel="TrashLabel">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1305,9 +1314,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="gbR-jV-nKH"/>
-                                <exclude reference="Cjh-l5-KLA"/>
                                 <exclude reference="OTY-fT-lMf"/>
                                 <exclude reference="y7x-RU-mU4"/>
+                                <exclude reference="Cjh-l5-KLA"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="cGh-Jq-Tg3"/>
@@ -1326,9 +1335,9 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="gbR-jV-nKH"/>
-                                <include reference="Cjh-l5-KLA"/>
                                 <include reference="OTY-fT-lMf"/>
                                 <include reference="y7x-RU-mU4"/>
+                                <include reference="Cjh-l5-KLA"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="cGh-Jq-Tg3"/>
@@ -1361,7 +1370,7 @@
         <image name="background-temp" width="749" height="498"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="USD-Kc-Y6t"/>
+        <segue reference="jOt-iP-hna"/>
         <segue reference="zzx-zv-5vX"/>
     </inferredMetricsTieBreakers>
 </document>
