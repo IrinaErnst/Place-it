@@ -21,6 +21,7 @@
 		36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22211A0AD48200E6FFDA /* SentViewController.swift */; };
 		36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */; };
 		36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */; };
+		A7095F781A31149700946E47 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77D37211A1E22F200AE100D /* CoreData.framework */; };
 		A7383AF71A14DA3F004E6019 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF61A14DA3F004E6019 /* CoreLocation.framework */; };
 		A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */; };
 		A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFA1A14DA5A004E6019 /* Foundation.framework */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7095F781A31149700946E47 /* CoreData.framework in Frameworks */,
 				A7383AFD1A14DA6F004E6019 /* SystemConfiguration.framework in Frameworks */,
 				A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */,
 				A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */,
