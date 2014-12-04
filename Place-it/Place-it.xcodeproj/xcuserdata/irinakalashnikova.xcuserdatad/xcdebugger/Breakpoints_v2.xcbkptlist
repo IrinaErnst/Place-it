@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Place-it/AppDelegate.swift"
-            timestampString = "438134176.171654"
+            timestampString = "439421793.937559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "beaconNotificationMessage(_:)"
-            landmarkType = "5">
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

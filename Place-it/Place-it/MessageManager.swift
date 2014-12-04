@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var inboxMessageMgr: MessageManager = MessageManager()
 var sentMessageMgr: MessageManager = MessageManager()
