@@ -11,9 +11,8 @@ import UIKit
 class SentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var EditButton: UIButton!
     @IBOutlet weak var MessagesTableView: UITableView!
-    @IBOutlet weak var SentLabel: UILabel!
+    @IBOutlet weak var ForwardButton: UIButton!
     
 
     override func viewDidLoad() {
