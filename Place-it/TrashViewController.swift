@@ -13,11 +13,12 @@ class TrashViewController: UIViewController {
     @IBOutlet weak var CancelButton: UIButton!
     @IBOutlet weak var EditButton: UIButton!
     @IBOutlet weak var TrashMessagesTableView: UITableView!
-    @IBOutlet weak var TrashLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Trash"
 
         // Do any additional setup after loading the view.
     }
@@ -72,15 +73,32 @@ class TrashViewController: UIViewController {
         return cell_t
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // Select & Edit
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        // Create an Instance of From-ToVC
+        var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
+        
+        // Assign message details
+        detail.to = trashMessageMgr.messages[indexPath.row].receiver
+        detail.messageToDisplay = trashMessageMgr.messages[indexPath.row].content
+        
+        // Programmatically push to associated VC (To-FromVC)
+        self.navigationController?.pushViewController(detail, animated: true)
+        
+        
+        /*
+        // Get the row data for the selected row
+        messageToEdit = draftsMessageMgr.messages[indexPath.row]
+        indexToEdit = indexPath.row
+        
+        var alert: UIAlertView = UIAlertView()
+        alert.title = "Message selected"
+        //alert.message = "Now you can Edit"
+        alert.addButtonWithTitle("Ok")
+        alert.show()*/
+        
     }
-    */
 
 }

@@ -47,6 +47,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     // Events
     @IBAction func SendButton_Clicked(sender: UIButton) {
         sentMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text,content_arg: MessageTextView.text)
+        inboxMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text,content_arg: MessageTextView.text)
         
         // Get rid of the keyboard:
         self.view.endEditing(true)

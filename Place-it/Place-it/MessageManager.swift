@@ -28,6 +28,8 @@ var draftsMessageMgr: MessageManager = MessageManager()
 var trashMessageMgr: MessageManager = MessageManager()
 
 
+
+
 struct message{
     var receiver: String = "Enter Phone Number"
     var place: String = "Enter Place"
