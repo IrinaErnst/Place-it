@@ -10,16 +10,17 @@ import UIKit
 
 class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var EditButton: UIButton!
+    
+    @IBOutlet weak var CancelBarButton: UINavigationItem!
     @IBOutlet weak var DraftsMessagesTableView: UITableView!
-    @IBOutlet weak var DraftsLabel: UILabel!
     
     var messageToEdit: message = message()
     var indexToEdit: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Drafts"
 
         // Do any additional setup after loading the view.
     }
@@ -31,13 +32,13 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    
+    /*
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         if (segue.identifier == "toPlaceItViewCtrlr") {
             var svc = segue!.destinationViewController as Place_itViewController
             svc.toPass = messageToEdit
         }
-    }
+    }*/
     
     
     // Returning to View--Update the list of messages:
@@ -62,40 +63,6 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    // Select & Edit
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        
-        // Get the row data for the selected row
-        messageToEdit = draftsMessageMgr.messages[indexPath.row]
-        indexToEdit = indexPath.row
-        
-        var alert: UIAlertView = UIAlertView()
-        alert.title = "Message selected"
-        //alert.message = "Now you can Edit"
-        alert.addButtonWithTitle("Ok")
-        alert.show()
-        
-    }
-    
-   
-    // Events
-    @IBAction func EditButton_Clicked(sender: AnyObject) {
-        // if message is not selected: display notification: select message
-        
-        /*var alert: UIAlertView = UIAlertView()
-        alert.title = "Select Message!"
-        alert.addButtonWithTitle("Ok")
-        alert.show()*/
-        
-        // else if message is selected, do the following:
-        // Delete message from drafts
-        messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
-
-        performSegueWithIdentifier("toPlaceItViewCtrlr", sender: self)
-    }
- 
-    
-    
     
     // Mandatory function for UITableViewDataSource (tell the table how many rows it needs to render):
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -119,14 +86,54 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell_d
     }
     
-    /*
-    // MARK: - Navigation
+    
+    // Select & Edit
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+        // Create an Instance of From-ToVC
+        var detail: NavPlace_itViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NavPlace_itViewController") as NavPlace_itViewController
+        
+        // Assign message details
+        detail.to = draftsMessageMgr.messages[indexPath.row].receiver
+        detail.messageToDisplay = draftsMessageMgr.messages[indexPath.row].content
+        
+        // Delete message from drafts
+        messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
+        
+        // Programmatically push to associated VC (To-FromVC)
+        self.navigationController?.pushViewController(detail, animated: true)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        
+        
+        /*
+        // Get the row data for the selected row
+        messageToEdit = draftsMessageMgr.messages[indexPath.row]
+        indexToEdit = indexPath.row
+        
+        var alert: UIAlertView = UIAlertView()
+        alert.title = "Message selected"
+        //alert.message = "Now you can Edit"
+        alert.addButtonWithTitle("Ok")
+        alert.show()*/
+        
     }
-    */
+    
+    
+    // Events
+    /*@IBAction func EditButton_Clicked(sender: AnyObject) {
+    // if message is not selected: display notification: select message
+    
+    /*var alert: UIAlertView = UIAlertView()
+    alert.title = "Select Message!"
+    alert.addButtonWithTitle("Ok")
+    alert.show()*/
+    
+    // else if message is selected, do the following:
+    // Delete message from drafts
+    messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
+    
+    performSegueWithIdentifier("toPlaceItViewCtrlr", sender: self)
+    }*/
 
 }

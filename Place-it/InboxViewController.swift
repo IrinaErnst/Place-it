@@ -10,8 +10,8 @@ import UIKit
 
 class InboxViewController: UIViewController {
     
-    @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var EditButton: UIButton!
+
+    @IBOutlet weak var CancelBarButton: UIBarButtonItem!
     @IBOutlet weak var InboxMessagesTableView: UITableView!
 
     

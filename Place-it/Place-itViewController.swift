@@ -22,6 +22,13 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var SendButton: UIButton!
     @IBOutlet weak var BackgroundImageView: UIImageView!
     
+    
+    var to: String = ""
+    var from: String = ""
+    var place: String = ""
+    var time: String = ""
+    var messageToDisplay: String = ""
+    
     var toPass: message = message()
     //var toPass: String!
     
@@ -29,9 +36,19 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Display message (& details)
+        PhoneNumberTextField.text = to
+        //FromDisplayLabel.text = from
+        PlaceTextField.text = place
+        //TimeDisplayLabel.text = time
+        MessageTextView.text = messageToDisplay
+        
+        
+        
+        /*
         PhoneNumberTextField.text = toPass.receiver
         PlaceTextField.text = toPass.place
-        MessageTextView.text = toPass.content
+        MessageTextView.text = toPass.content*/
 
 
         // Do any additional setup after loading the view.
@@ -53,20 +70,22 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         self.view.endEditing(true)
         
         // Clear text fields
-        PhoneNumberTextField.text = "Enter Phone Number"
-        PlaceTextField.text = "Enter Place"
-        MessageTextView.text = "Enter New Message"
+        PhoneNumberTextField.text = ""
+        PlaceTextField.text = ""
+        MessageTextView.text = ""
         
         // Once the message is sent, jump back to the first view
         // IMPLEMENT!
         // self.tabBarController.selectedIndex = 0
+        
+        navigationController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         
         //println("Send Button was clicked.")
     }
     
     @IBAction func CancelButton_Clicked(sender: UIButton) {
         
-        if PhoneNumberTextField.text != "Enter Phone Number" || PlaceTextField.text != "Enter Place" || MessageTextView.text != "Enter New Message"{
+        if PhoneNumberTextField.text != "" || PlaceTextField.text != "" || MessageTextView.text != ""{
             draftsMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, content_arg: MessageTextView.text)
         }
         
@@ -74,9 +93,9 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         self.view.endEditing(true)
         
         // Clear text fields
-        PhoneNumberTextField.text = "Enter Phone Number"
-        PlaceTextField.text = "Enter Place"
-        MessageTextView.text = "Enter New Message"
+        PhoneNumberTextField.text = ""
+        PlaceTextField.text = ""
+        MessageTextView.text = ""
         
         // Once the message is saved in Drafts, jump back to the first view
         // IMPLEMENT!
@@ -101,17 +120,5 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         return true
     // called when 'return' key pressed. return NO to ignore.
     }
-    
-   
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

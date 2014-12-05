@@ -10,10 +10,8 @@ import UIKit
 
 class TrashViewController: UIViewController {
 
-    @IBOutlet weak var CancelButton: UIButton!
-    @IBOutlet weak var EditButton: UIButton!
+    @IBOutlet weak var CancelBarButton: UIBarButtonItem!
     @IBOutlet weak var TrashMessagesTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

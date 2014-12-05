@@ -15,6 +15,7 @@
 		3649C95E1A0984DB0058779D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3649C95C1A0984DB0058779D /* LaunchScreen.xib */; };
 		3649C96A1A0984DB0058779D /* Place_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9691A0984DB0058779D /* Place_itTests.swift */; };
 		364E58E31A1D146600A23EAC /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E58E21A1D146600A23EAC /* MessageManager.swift */; };
+		3656CF8A1A321A380004A1F2 /* NavPlace-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */; };
 		36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E021A317EAB00BA4B84 /* To-FromVC.swift */; };
 		36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E041A317EB300BA4B84 /* From-ToVC.swift */; };
 		36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */; };
@@ -52,6 +53,7 @@
 		3649C9681A0984DB0058779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3649C9691A0984DB0058779D /* Place_itTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place_itTests.swift; sourceTree = "<group>"; };
 		364E58E21A1D146600A23EAC /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavPlace-itViewController.swift"; sourceTree = SOURCE_ROOT; };
 		36575E021A317EAB00BA4B84 /* To-FromVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "To-FromVC.swift"; sourceTree = SOURCE_ROOT; };
 		36575E041A317EB300BA4B84 /* From-ToVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "From-ToVC.swift"; sourceTree = SOURCE_ROOT; };
 		36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraftsViewController.swift; path = ../DraftsViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				3649C9551A0984DB0058779D /* ViewController.swift */,
 				364E58E21A1D146600A23EAC /* MessageManager.swift */,
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
+				3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */,
 				36CE221F1A0A832800E6FFDA /* InboxViewController.swift */,
 				36CE22211A0AD48200E6FFDA /* SentViewController.swift */,
 				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
@@ -323,6 +326,7 @@
 				36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */,
 				3649C9561A0984DB0058779D /* ViewController.swift in Sources */,
 				3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */,
+				3656CF8A1A321A380004A1F2 /* NavPlace-itViewController.swift in Sources */,
 				36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */,
 				36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */,
 				36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */,
