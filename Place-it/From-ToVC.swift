@@ -21,6 +21,7 @@ class From_ToVC: UIViewController {
     @IBOutlet weak var MessageTextView: UITextView!
     // outlet for real time
     
+    
     var To: String = ""
     var From: String = ""
     var Where: String = ""
@@ -28,6 +29,7 @@ class From_ToVC: UIViewController {
     var What: String = ""
     var realTime: String = ""
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -29,7 +29,6 @@ var trashMessageMgr: MessageManager = MessageManager()
 
 
 
-
 struct message{
     var receiver: String = ""
     var place: String = ""

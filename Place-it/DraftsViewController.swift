@@ -15,9 +15,6 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var DraftsMessagesTableView: UITableView!
     
     
-    var messageToEdit: message = message()
-    var indexToEdit: Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,28 +85,24 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    // Select & Edit
+    // Select & Display
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         // Create an Instance of NavPlace_itViewController:
         var detail: NavPlace_itViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NavPlace_itViewController") as NavPlace_itViewController
         
-        // Assign message details
+        // Assign message details --> this way causes crash in Drafts view:
         detail.To = draftsMessageMgr.messages[indexPath.row].receiver
-        detail.Where = inboxMessageMgr.messages[indexPath.row].place
-        detail.When = inboxMessageMgr.messages[indexPath.row].time
-        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        detail.Where = draftsMessageMgr.messages[indexPath.row].place
+        detail.When = draftsMessageMgr.messages[indexPath.row].time
+        detail.What = draftsMessageMgr.messages[indexPath.row].content
         // Here don't pass the time of creating, it will be modified in the next view...
         
-        
-        // Delete message from drafts
-        //messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
         draftsMessageMgr.messages.removeAtIndex(indexPath.row)
         
-        // Programmatically push to associated VC (To-FromVC)
+        // Programmatically push to associated VC (Nav_Place_itViewCOntroller)
         self.navigationController?.pushViewController(detail, animated: true)
 
-        
         
         /*
         // Get the row data for the selected row

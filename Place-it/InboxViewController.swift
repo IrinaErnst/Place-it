@@ -74,7 +74,7 @@ class InboxViewController: UIViewController {
     }
     
     
-    // Select & Edit
+    // Select & Display
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         // Create an Instance of From-ToVC

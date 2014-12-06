@@ -18,6 +18,7 @@ class ViewController: UIViewController/*, CLLocationManagerDelegate*/ {
     @IBOutlet weak var TrashButton: UIButton!
     @IBOutlet weak var BackgroundImageView: UIImageView!
  
+    
     //let locationManager  = CLLocationManager()
     //let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"), identifier: "Estimotes")
     

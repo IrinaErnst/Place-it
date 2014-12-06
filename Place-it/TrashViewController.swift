@@ -10,8 +10,10 @@ import UIKit
 
 class TrashViewController: UIViewController {
 
+    
     @IBOutlet weak var CancelBarButton: UIBarButtonItem!
     @IBOutlet weak var TrashMessagesTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,18 +74,18 @@ class TrashViewController: UIViewController {
     }
     
     
-    // Select & Edit
+    // Select & Display
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         // Create an Instance of From-ToVC
         var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
         
         // Assign message details
-        detail.To = inboxMessageMgr.messages[indexPath.row].receiver
+        detail.To = trashMessageMgr.messages[indexPath.row].receiver
         detail.From = ""
-        detail.Where = inboxMessageMgr.messages[indexPath.row].place
-        detail.When = inboxMessageMgr.messages[indexPath.row].time
-        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        detail.Where = trashMessageMgr.messages[indexPath.row].place
+        detail.When = trashMessageMgr.messages[indexPath.row].time
+        detail.What = trashMessageMgr.messages[indexPath.row].content
         // display time of creating
         // detail.realTime = ""
         

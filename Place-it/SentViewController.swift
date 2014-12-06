@@ -76,35 +76,23 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    // Select & Edit
+    // Select & Display
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
         // Create an Instance of To-FromVC
         var detail: To_FromVC = self.storyboard?.instantiateViewControllerWithIdentifier("To_FromVC") as To_FromVC
         
         // Assign message details
-        detail.To = inboxMessageMgr.messages[indexPath.row].receiver
+        detail.To = sentMessageMgr.messages[indexPath.row].receiver
         detail.From = ""
-        detail.Where = inboxMessageMgr.messages[indexPath.row].place
-        detail.When = inboxMessageMgr.messages[indexPath.row].time
-        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        detail.Where = sentMessageMgr.messages[indexPath.row].place
+        detail.When = sentMessageMgr.messages[indexPath.row].time
+        detail.What = sentMessageMgr.messages[indexPath.row].content
         // display time of creating
         // detail.realTime = ""
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)
-        
-        
-        /*
-        // Get the row data for the selected row
-        messageToEdit = draftsMessageMgr.messages[indexPath.row]
-        indexToEdit = indexPath.row
-        
-        var alert: UIAlertView = UIAlertView()
-        alert.title = "Message selected"
-        //alert.message = "Now you can Edit"
-        alert.addButtonWithTitle("Ok")
-        alert.show()*/
         
     }
 

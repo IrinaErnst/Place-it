@@ -21,12 +21,14 @@ class To_FromVC: UIViewController {
     @IBOutlet weak var MessageTextView: UITextView!
     // outlet for real time
     
+    
     var To: String = ""
     var From: String = ""
     var Where: String = ""
     var When: String = ""
     var What: String = ""
     var realTime: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
