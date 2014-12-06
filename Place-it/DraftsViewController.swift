@@ -14,6 +14,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var CancelBarButton: UINavigationItem!
     @IBOutlet weak var DraftsMessagesTableView: UITableView!
     
+    
     var messageToEdit: message = message()
     var indexToEdit: Int = 0
     
@@ -32,7 +33,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    /*
+    /* Segue
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         if (segue.identifier == "toPlaceItViewCtrlr") {
             var svc = segue!.destinationViewController as Place_itViewController
@@ -56,7 +57,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var tempMessage: message = draftsMessageMgr.messages.removeAtIndex(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, content_arg: tempMessage.content)
+            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
             
             //Update the Table View:
             DraftsMessagesTableView.reloadData()
@@ -81,7 +82,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // might be incorrect...
         cell_d.textLabel?.text = draftsMessageMgr.messages[indexPath.row].receiver
         cell_d.detailTextLabel?.text = draftsMessageMgr.messages[indexPath.row].content
-        //need to do sth with the place member variable & optionally date
+        // display date of creation?
         
         return cell_d
     }
@@ -90,20 +91,24 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // Select & Edit
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-        // Create an Instance of From-ToVC
+        // Create an Instance of NavPlace_itViewController:
         var detail: NavPlace_itViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NavPlace_itViewController") as NavPlace_itViewController
         
         // Assign message details
-        detail.to = draftsMessageMgr.messages[indexPath.row].receiver
-        detail.messageToDisplay = draftsMessageMgr.messages[indexPath.row].content
+        detail.To = draftsMessageMgr.messages[indexPath.row].receiver
+        detail.Where = inboxMessageMgr.messages[indexPath.row].place
+        detail.When = inboxMessageMgr.messages[indexPath.row].time
+        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        // Here don't pass the time of creating, it will be modified in the next view...
+        
         
         // Delete message from drafts
-        messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
+        //messageToEdit = draftsMessageMgr.messages.removeAtIndex(indexToEdit)
+        draftsMessageMgr.messages.removeAtIndex(indexPath.row)
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)
 
-        
         
         
         /*

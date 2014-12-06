@@ -45,12 +45,10 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
             var tempMessage: message = sentMessageMgr.messages.removeAtIndex(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, content_arg: tempMessage.content)
+            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
             
             //Update the Table View:
             MessagesTableView.reloadData()
-            
-            //println("Delete this row")
         }
     }
     
@@ -72,7 +70,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         // might be incorrect...
         cell.textLabel?.text = sentMessageMgr.messages[indexPath.row].receiver
         cell.detailTextLabel?.text = sentMessageMgr.messages[indexPath.row].content
-        //need to do sth with the place member variable & optionally date
+        // display date of creation?
         
         return cell
     }
@@ -85,8 +83,13 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         var detail: To_FromVC = self.storyboard?.instantiateViewControllerWithIdentifier("To_FromVC") as To_FromVC
         
         // Assign message details
-        detail.to = sentMessageMgr.messages[indexPath.row].receiver
-        detail.messageToDisplay = sentMessageMgr.messages[indexPath.row].content
+        detail.To = inboxMessageMgr.messages[indexPath.row].receiver
+        detail.From = ""
+        detail.Where = inboxMessageMgr.messages[indexPath.row].place
+        detail.When = inboxMessageMgr.messages[indexPath.row].time
+        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        // display time of creating
+        // detail.realTime = ""
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)

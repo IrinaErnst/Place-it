@@ -19,25 +19,29 @@ class From_ToVC: UIViewController {
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var TimeDisplayLabel: UILabel!
     @IBOutlet weak var MessageTextView: UITextView!
+    // outlet for real time
     
-    var to: String = ""
-    var from: String = ""
-    var place: String = ""
-    var time: String = ""
-    var messageToDisplay: String = ""
+    var To: String = ""
+    var From: String = ""
+    var Where: String = ""
+    var When: String = ""
+    var What: String = ""
+    var realTime: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Display message (& details)
-        ToDisplayLabel.text = to
-        FromDisplayLabel.text = from
-        PlaceDisplayLabel.text = place
-        TimeDisplayLabel.text = time
-        MessageTextView.text = messageToDisplay
+        ToDisplayLabel.text = To
+        FromDisplayLabel.text = From
+        PlaceDisplayLabel.text = Where
+        TimeDisplayLabel.text = When
+        MessageTextView.text = What
+        // Display time of creation:
+        // sth ??? = realTime
         
         // Assign NavBar title
-        self.title = from
+        self.title = From
 
         // Do any additional setup after loading the view.
     }

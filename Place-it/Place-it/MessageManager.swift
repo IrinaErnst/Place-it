@@ -31,10 +31,13 @@ var trashMessageMgr: MessageManager = MessageManager()
 
 
 struct message{
-    var receiver: String = "Enter Phone Number"
-    var place: String = "Enter Place"
-    var content: String = "Enter New Message"
-    // optionally add date (time of message delivery)
+    var receiver: String = ""
+    var place: String = ""
+    var time: String = ""
+    var content: String = ""
+    // time of creating a message:
+    var timeOfCreating = ""
+    
 }
 
 class MessageManager: NSObject {
@@ -53,8 +56,8 @@ class MessageManager: NSObject {
     }*/
     
     // Add elements to the messages array
-    func addMessage(receiver_arg: String, place_arg: String, content_arg: String){
-        messages.append(message(receiver:receiver_arg, place: place_arg, content:content_arg))
+    func addMessage(receiver_arg: String, place_arg: String, time_arg: String, content_arg: String, timeOfCreating_arg: String){
+        messages.append(message(receiver: receiver_arg, place: place_arg, time: time_arg, content: content_arg, timeOfCreating: timeOfCreating_arg))
     }
     
 }

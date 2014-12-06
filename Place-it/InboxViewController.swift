@@ -43,7 +43,7 @@ class InboxViewController: UIViewController {
             var tempMessage: message = inboxMessageMgr.messages.removeAtIndex(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, content_arg: tempMessage.content)
+            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
             
             //Update the Table View:
             InboxMessagesTableView.reloadData()
@@ -68,7 +68,7 @@ class InboxViewController: UIViewController {
         // might be incorrect...
         cell_i.textLabel?.text = inboxMessageMgr.messages[indexPath.row].receiver
         cell_i.detailTextLabel?.text = inboxMessageMgr.messages[indexPath.row].content
-        //need to do sth with the place member variable & optionally date
+        // display date of creation?
         
         return cell_i
     }
@@ -81,8 +81,13 @@ class InboxViewController: UIViewController {
         var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
         
         // Assign message details
-        detail.to = inboxMessageMgr.messages[indexPath.row].receiver
-        detail.messageToDisplay = inboxMessageMgr.messages[indexPath.row].content
+        detail.To = inboxMessageMgr.messages[indexPath.row].receiver
+        detail.From = ""
+        detail.Where = inboxMessageMgr.messages[indexPath.row].place
+        detail.When = inboxMessageMgr.messages[indexPath.row].time
+        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        // display time of creating
+        // detail.realTime = ""
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)

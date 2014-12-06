@@ -16,6 +16,8 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var PhoneNumberTextField: UITextField!
     @IBOutlet weak var PlaceLabel: UILabel!
     @IBOutlet weak var PlaceTextField: UITextField!
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var TimeTextField: UITextField!
     @IBOutlet weak var MessageLabel: UILabel!
     @IBOutlet weak var MessageTextView: UITextView!
     @IBOutlet weak var CancelButton: UIButton!
@@ -23,29 +25,30 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var BackgroundImageView: UIImageView!
     
     
-    var to: String = ""
-    var from: String = ""
-    var place: String = ""
-    var time: String = ""
-    var messageToDisplay: String = ""
+    var To: String = ""
+    var From: String = ""
+    var Where: String = ""
+    var When: String = ""
+    var What: String = ""
+    var realTime: String = ""
     
-    var toPass: message = message()
-    //var toPass: String!
+    // For seguue:
+    //var toPass: message = message()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Display message (& details)
-        PhoneNumberTextField.text = to
-        //FromDisplayLabel.text = from
-        PlaceTextField.text = place
-        //TimeDisplayLabel.text = time
-        MessageTextView.text = messageToDisplay
+        PhoneNumberTextField.text = To
+        PlaceTextField.text = Where
+        TimeTextField.text = When
+        MessageTextView.text = What
+        // From - implement! This is my number!
+        // Real time - implement!
+
         
-        
-        
-        /*
+        /* Segue:
         PhoneNumberTextField.text = toPass.receiver
         PlaceTextField.text = toPass.place
         MessageTextView.text = toPass.content*/
@@ -53,7 +56,6 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
 
         // Do any additional setup after loading the view.
     }
-
     
     
     override func didReceiveMemoryWarning() {
@@ -61,32 +63,42 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // Dispose of any resources that can be recreated.
     }
     
+    
     // Events
     @IBAction func SendButton_Clicked(sender: UIButton) {
-        sentMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text,content_arg: MessageTextView.text)
-        inboxMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text,content_arg: MessageTextView.text)
         
-        // Get rid of the keyboard:
-        self.view.endEditing(true)
+        // If receiver not specified, display notification
+        if (PhoneNumberTextField.text == "") {
+            var alert: UIAlertView = UIAlertView()
+            alert.title = "Place-it can not be sent!"
+            alert.message = "Specify receiver of your message"
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
         
-        // Clear text fields
-        PhoneNumberTextField.text = ""
-        PlaceTextField.text = ""
-        MessageTextView.text = ""
+        else {
+            sentMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
+            // Only for testing Inbox. DELETE LATER:
+            inboxMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
         
-        // Once the message is sent, jump back to the first view
-        // IMPLEMENT!
-        // self.tabBarController.selectedIndex = 0
         
-        navigationController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+            // Get rid of the keyboard:
+            self.view.endEditing(true)
         
-        //println("Send Button was clicked.")
+            // Clear text fields
+            PhoneNumberTextField.text = ""
+            PlaceTextField.text = ""
+            TimeTextField.text = ""
+            MessageTextView.text = ""
+        
+            // Once the message is sent, stay in the Place-it view
+        }
     }
     
     @IBAction func CancelButton_Clicked(sender: UIButton) {
         
-        if PhoneNumberTextField.text != "" || PlaceTextField.text != "" || MessageTextView.text != ""{
-            draftsMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, content_arg: MessageTextView.text)
+        if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || TimeTextField.text != "" || MessageTextView.text != "") {
+            draftsMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
         }
         
         // Get rid of the keyboard:
@@ -95,13 +107,11 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // Clear text fields
         PhoneNumberTextField.text = ""
         PlaceTextField.text = ""
+        TimeTextField.text = ""
         MessageTextView.text = ""
         
-        // Once the message is saved in Drafts, jump back to the first view
-        // IMPLEMENT!
-        // self.tabBarController.selectedIndex = 0
+        // Once the message is saved in Drafts, jump back to the Main view
     }
-    
     
     
     

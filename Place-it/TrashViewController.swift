@@ -66,7 +66,7 @@ class TrashViewController: UIViewController {
         // might be incorrect...
         cell_t.textLabel?.text = trashMessageMgr.messages[indexPath.row].receiver
         cell_t.detailTextLabel?.text = trashMessageMgr.messages[indexPath.row].content
-        //need to do sth with the place member variable & optionally date
+        // display date of creation?
         
         return cell_t
     }
@@ -79,8 +79,13 @@ class TrashViewController: UIViewController {
         var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
         
         // Assign message details
-        detail.to = trashMessageMgr.messages[indexPath.row].receiver
-        detail.messageToDisplay = trashMessageMgr.messages[indexPath.row].content
+        detail.To = inboxMessageMgr.messages[indexPath.row].receiver
+        detail.From = ""
+        detail.Where = inboxMessageMgr.messages[indexPath.row].place
+        detail.When = inboxMessageMgr.messages[indexPath.row].time
+        detail.What = inboxMessageMgr.messages[indexPath.row].content
+        // display time of creating
+        // detail.realTime = ""
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)
