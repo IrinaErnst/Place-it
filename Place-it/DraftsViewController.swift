@@ -91,7 +91,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Create an Instance of NavPlace_itViewController:
         var detail: NavPlace_itViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NavPlace_itViewController") as NavPlace_itViewController
         
-        // Assign message details --> this way causes crash in Drafts view:
+        // Assign message details
         detail.To = draftsMessageMgr.messages[indexPath.row].receiver
         detail.Where = draftsMessageMgr.messages[indexPath.row].place
         detail.When = draftsMessageMgr.messages[indexPath.row].time
