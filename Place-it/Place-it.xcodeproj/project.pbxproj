@@ -23,6 +23,7 @@
 		36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22211A0AD48200E6FFDA /* SentViewController.swift */; };
 		36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */; };
 		36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */; };
+		36D7238F1A32C881007195AF /* Place-it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D7238D1A32C881007195AF /* Place-it.xcdatamodeld */; };
 		A7095F781A31149700946E47 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77D37211A1E22F200AE100D /* CoreData.framework */; };
 		A7383AF71A14DA3F004E6019 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF61A14DA3F004E6019 /* CoreLocation.framework */; };
 		A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */; };
@@ -61,6 +62,7 @@
 		36CE22211A0AD48200E6FFDA /* SentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentViewController.swift; path = ../SentViewController.swift; sourceTree = "<group>"; };
 		36CE22231A0AD5CA00E6FFDA /* TrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrashViewController.swift; path = ../TrashViewController.swift; sourceTree = "<group>"; };
 		36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Place-itViewController.swift"; path = "../Place-itViewController.swift"; sourceTree = "<group>"; };
+		36D7238E1A32C881007195AF /* Place-it.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place-it.xcdatamodel"; sourceTree = "<group>"; };
 		5CD29EF672CD0D5CA59D7B94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		735571BD0BAA1F5AA0E6A091 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7383AF61A14DA3F004E6019 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,7 @@
 				36575E041A317EB300BA4B84 /* From-ToVC.swift */,
 				36575E021A317EAB00BA4B84 /* To-FromVC.swift */,
 				3649C9571A0984DB0058779D /* Main.storyboard */,
+				36D7238D1A32C881007195AF /* Place-it.xcdatamodeld */,
 				3649C95A1A0984DB0058779D /* Images.xcassets */,
 				3649C95C1A0984DB0058779D /* LaunchScreen.xib */,
 				3649C9511A0984DB0058779D /* Supporting Files */,
@@ -328,6 +331,7 @@
 				3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */,
 				3656CF8A1A321A380004A1F2 /* NavPlace-itViewController.swift in Sources */,
 				36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */,
+				36D7238F1A32C881007195AF /* Place-it.xcdatamodeld in Sources */,
 				36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */,
 				36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */,
 				364E58E31A1D146600A23EAC /* MessageManager.swift in Sources */,
@@ -556,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36D7238D1A32C881007195AF /* Place-it.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36D7238E1A32C881007195AF /* Place-it.xcdatamodel */,
+			);
+			currentVersion = 36D7238E1A32C881007195AF /* Place-it.xcdatamodel */;
+			path = "Place-it.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3649C9461A0984DB0058779D /* Project object */;
 }

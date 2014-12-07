@@ -3,12 +3,15 @@
 //  Place-it
 //
 //  Created by Ilona Michalowska on 12/5/14.
+//  Modified by Eric Glass on 12/6/2014.
 //  Copyright (c) 2014 Ilona Michalowska & Irina Kalashnikova. All rights reserved.
 //
 
 import UIKit
+import AddressBook
+import AddressBookUI
 
-class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate{
+class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, ABPeoplePickerNavigationControllerDelegate{
     
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var PhoneNumberTextField: UITextField!
@@ -21,6 +24,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var BackgroundImageView: UIImageView!
     @IBOutlet weak var CancelBarButton: UIBarButtonItem!
     @IBOutlet weak var SendBarButton: UIBarButtonItem!
+    @IBOutlet weak var AddContactButton: UIButton!
     
     
     var To: String = ""
@@ -30,6 +34,21 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     var What: String = ""
     var realTime: String = ""
     
+    
+    // Person Picker
+    let personPicker: ABPeoplePickerNavigationController
+    
+    // This brings up address inromation from contacts without requiring permission
+    required init(coder aDecoder: NSCoder) {
+        personPicker = ABPeoplePickerNavigationController()
+        super.init(coder: aDecoder)
+        // Only bring up the phone numbers
+        personPicker.displayedProperties = [
+            Int(kABPersonPhoneProperty)
+        ]
+        personPicker.peoplePickerDelegate = self
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +72,38 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     
-    // Events
+    func peoplePickerNavigationControllerDidCancel(
+        peoplePicker: ABPeoplePickerNavigationController!){
+            // This is required?
+    }
+    
+    func peoplePickerNavigationController(
+        peoplePicker: ABPeoplePickerNavigationController!,
+        didSelectPerson person: ABRecordRef!,
+        property: ABPropertyID,
+        identifier: ABMultiValueIdentifier) {
+            
+            let phones: ABMultiValueRef = ABRecordCopyValue(person,
+                property).takeRetainedValue()
+            
+            let index = Int(identifier) as CFIndex
+            
+            let phone: String = ABMultiValueCopyValueAtIndex(phones,
+                index).takeRetainedValue() as String
+            
+            /* Put selected number in text box */
+            PhoneNumberTextField.text = phone
+    }
+    
+    
+    // Events:
+    
+    // Contact Button
+    @IBAction func performPickPersonProperty(sender : AnyObject) {
+        self.presentViewController(personPicker, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func SendBarButton_Clicked(sender: UIBarButtonItem) {
         
         // If receiver not specified, display notification
