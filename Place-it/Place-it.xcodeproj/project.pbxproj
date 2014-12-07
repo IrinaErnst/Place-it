@@ -25,6 +25,7 @@
 		36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */; };
 		36D7238F1A32C881007195AF /* Place-it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D7238D1A32C881007195AF /* Place-it.xcdatamodeld */; };
 		A7095F781A31149700946E47 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77D37211A1E22F200AE100D /* CoreData.framework */; };
+		A7095F891A34D65F00946E47 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A7095F7F1A34D12100946E47 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7383AF71A14DA3F004E6019 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF61A14DA3F004E6019 /* CoreLocation.framework */; };
 		A7383AF91A14DA4C004E6019 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */; };
 		A7383AFB1A14DA5A004E6019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7383AFA1A14DA5A004E6019 /* Foundation.framework */; };
@@ -39,7 +40,42 @@
 			remoteGlobalIDString = 3649C94D1A0984DB0058779D;
 			remoteInfo = "Place-it";
 		};
+		A7095F7E1A34D12100946E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7095F791A34D12100946E47 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		A7095F801A34D12100946E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7095F791A34D12100946E47 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		A7095F861A34D63700946E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7095F791A34D12100946E47 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7095F881A34D63C00946E47 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7095F891A34D65F00946E47 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E4D832012D34F5EC13798BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +101,7 @@
 		36D7238E1A32C881007195AF /* Place-it.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place-it.xcdatamodel"; sourceTree = "<group>"; };
 		5CD29EF672CD0D5CA59D7B94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		735571BD0BAA1F5AA0E6A091 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7095F791A34D12100946E47 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		A7383AF61A14DA3F004E6019 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A7383AF81A14DA4C004E6019 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A7383AFA1A14DA5A004E6019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,9 +215,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A7095F7A1A34D12100946E47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7095F7F1A34D12100946E47 /* Alamofire.framework */,
+				A7095F811A34D12100946E47 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AED15D148FC1B9FF9A601690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7095F791A34D12100946E47 /* Alamofire.xcodeproj */,
 				735571BD0BAA1F5AA0E6A091 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -198,10 +245,12 @@
 				3649C94B1A0984DB0058779D /* Frameworks */,
 				3649C94C1A0984DB0058779D /* Resources */,
 				1F8E87B4FF4948F290FFF4DA /* Copy Pods Resources */,
+				A7095F881A34D63C00946E47 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A7095F871A34D63700946E47 /* PBXTargetDependency */,
 			);
 			name = "Place-it";
 			productName = "Place-it";
@@ -237,11 +286,11 @@
 				TargetAttributes = {
 					3649C94D1A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = AWFBE8QD87;
+						DevelopmentTeam = B9NU7FF5WD;
 					};
 					3649C9621A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = AWFBE8QD87;
+						DevelopmentTeam = B9NU7FF5WD;
 						TestTargetID = 3649C94D1A0984DB0058779D;
 					};
 				};
@@ -257,6 +306,12 @@
 			mainGroup = 3649C9451A0984DB0058779D;
 			productRefGroup = 3649C94F1A0984DB0058779D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A7095F7A1A34D12100946E47 /* Products */;
+					ProjectRef = A7095F791A34D12100946E47 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3649C94D1A0984DB0058779D /* Place-it */,
@@ -264,6 +319,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A7095F7F1A34D12100946E47 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = A7095F7E1A34D12100946E47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A7095F811A34D12100946E47 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = A7095F801A34D12100946E47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3649C94C1A0984DB0058779D /* Resources */ = {
@@ -353,6 +425,11 @@
 			isa = PBXTargetDependency;
 			target = 3649C94D1A0984DB0058779D /* Place-it */;
 			targetProxy = 3649C9641A0984DB0058779D /* PBXContainerItemProxy */;
+		};
+		A7095F871A34D63700946E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = A7095F861A34D63700946E47 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

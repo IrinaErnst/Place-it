@@ -7,9 +7,10 @@
 //
 
 import UIKit
-//import CoreLocation
+import CoreLocation
+import Alamofire
 
-class ViewController: UIViewController/*, CLLocationManagerDelegate*/ {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var PlaceItButton: UIButton!
     @IBOutlet weak var InboxButton: UIButton!
@@ -18,27 +19,44 @@ class ViewController: UIViewController/*, CLLocationManagerDelegate*/ {
     @IBOutlet weak var TrashButton: UIButton!
     @IBOutlet weak var BackgroundImageView: UIImageView!
  
-    
-    //let locationManager  = CLLocationManager()
-    //let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"), identifier: "Estimotes")
-    
-    
+    let locationManager = CLLocationManager()
+    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"), identifier: "Estimotes")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        /*locationManager.delegate = self
+        locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() !=  CLAuthorizationStatus.AuthorizedWhenInUse)
         {
-            //Notification about authorization to use bluetooth will be only once - IK
             locationManager.requestWhenInUseAuthorization()
         }
-        locationManager.startRangingBeaconsInRegion(region)*/
+        locationManager.startRangingBeaconsInRegion(region)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!)
+    {
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown}
+        if (knownBeacons.count > 0)
+        {
+            let closestBeacon = knownBeacons[0] as CLBeacon
+//            println(closestBeacon.minor.integerValue)
+
+            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["beacon_id": closestBeacon.proximityUUID.UUIDString, "maj_val": closestBeacon.major, "min_val": closestBeacon.minor])
+              .responseJSON { (request, response, data, error) in
+//                println(request)
+//                println(response)
+//                println(data)
+                println(data!["name"])
+//                println(error)
+              }
+        
+        }
+    }
+
 }
 
