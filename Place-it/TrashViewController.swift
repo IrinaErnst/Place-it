@@ -43,7 +43,7 @@ class TrashViewController: UIViewController {
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             
             // Delete for good:
-            trashMessageMgr.messages.removeAtIndex(indexPath.row)
+            trashMessageMgr.removeMessage(indexPath.row)
             
             //Update the Table View:
             TrashMessagesTableView.reloadData()
@@ -81,8 +81,8 @@ class TrashViewController: UIViewController {
         var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
         
         // Assign message details
+        detail.From = trashMessageMgr.messages[indexPath.row].sender
         detail.To = trashMessageMgr.messages[indexPath.row].receiver
-        detail.From = ""
         detail.Where = trashMessageMgr.messages[indexPath.row].place
         detail.When = trashMessageMgr.messages[indexPath.row].time
         detail.What = trashMessageMgr.messages[indexPath.row].content

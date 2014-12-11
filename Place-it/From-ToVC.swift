@@ -22,8 +22,8 @@ class From_ToVC: UIViewController {
     // outlet for real time
     
     
-    var To: String = ""
     var From: String = ""
+    var To: String = ""
     var Where: String = ""
     var When: String = ""
     var What: String = ""

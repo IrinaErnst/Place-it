@@ -41,10 +41,10 @@ class InboxViewController: UIViewController {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             
-            var tempMessage: message = inboxMessageMgr.messages.removeAtIndex(indexPath.row)
+            var tempMessage: message = inboxMessageMgr.removeMessage(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
+            trashMessageMgr.addMessage("", receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "", ID_arg: "")
             
             //Update the Table View:
             InboxMessagesTableView.reloadData()
@@ -67,7 +67,7 @@ class InboxViewController: UIViewController {
         let cell_i: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         // might be incorrect...
-        cell_i.textLabel?.text = inboxMessageMgr.messages[indexPath.row].receiver
+        cell_i.textLabel?.text = inboxMessageMgr.messages[indexPath.row].sender
         cell_i.detailTextLabel?.text = inboxMessageMgr.messages[indexPath.row].content
         // display date of creation?
         
@@ -82,8 +82,8 @@ class InboxViewController: UIViewController {
         var detail: From_ToVC = self.storyboard?.instantiateViewControllerWithIdentifier("From_ToVC") as From_ToVC
         
         // Assign message details
+        detail.From = inboxMessageMgr.messages[indexPath.row].sender
         detail.To = inboxMessageMgr.messages[indexPath.row].receiver
-        detail.From = ""
         detail.Where = inboxMessageMgr.messages[indexPath.row].place
         detail.When = inboxMessageMgr.messages[indexPath.row].time
         detail.What = inboxMessageMgr.messages[indexPath.row].content

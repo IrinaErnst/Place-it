@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FA4EB0667A795B75E53B1C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 735571BD0BAA1F5AA0E6A091 /* libPods.a */; };
+		3647F5F81A38B1BD009AF6E3 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3647F5F71A38B1BD009AF6E3 /* PersistenceHelper.swift */; };
 		3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9531A0984DB0058779D /* AppDelegate.swift */; };
 		3649C9561A0984DB0058779D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649C9551A0984DB0058779D /* ViewController.swift */; };
 		3649C9591A0984DB0058779D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3649C9571A0984DB0058779D /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		0E4D832012D34F5EC13798BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3647F5F71A38B1BD009AF6E3 /* PersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		3649C94E1A0984DB0058779D /* Place-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3649C9521A0984DB0058779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3649C9531A0984DB0058779D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				3649C9531A0984DB0058779D /* AppDelegate.swift */,
 				3649C9551A0984DB0058779D /* ViewController.swift */,
 				364E58E21A1D146600A23EAC /* MessageManager.swift */,
+				3647F5F71A38B1BD009AF6E3 /* PersistenceHelper.swift */,
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
 				3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */,
 				36CE221F1A0A832800E6FFDA /* InboxViewController.swift */,
@@ -286,11 +289,11 @@
 				TargetAttributes = {
 					3649C94D1A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = B9NU7FF5WD;
+						DevelopmentTeam = AWFBE8QD87;
 					};
 					3649C9621A0984DB0058779D = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = B9NU7FF5WD;
+						DevelopmentTeam = AWFBE8QD87;
 						TestTargetID = 3649C94D1A0984DB0058779D;
 					};
 				};
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36CE22201A0A832800E6FFDA /* InboxViewController.swift in Sources */,
+				3647F5F81A38B1BD009AF6E3 /* PersistenceHelper.swift in Sources */,
 				36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */,
 				36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */,
 				36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */,

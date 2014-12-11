@@ -42,10 +42,10 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             
-            var tempMessage: message = sentMessageMgr.messages.removeAtIndex(indexPath.row)
+            var tempMessage: message = sentMessageMgr.removeMessage(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
+            trashMessageMgr.addMessage("", receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "", ID_arg: "")
             
             //Update the Table View:
             MessagesTableView.reloadData()
@@ -83,8 +83,8 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         var detail: To_FromVC = self.storyboard?.instantiateViewControllerWithIdentifier("To_FromVC") as To_FromVC
         
         // Assign message details
+        detail.From = sentMessageMgr.messages[indexPath.row].sender
         detail.To = sentMessageMgr.messages[indexPath.row].receiver
-        detail.From = ""
         detail.Where = sentMessageMgr.messages[indexPath.row].place
         detail.When = sentMessageMgr.messages[indexPath.row].time
         detail.What = sentMessageMgr.messages[indexPath.row].content

@@ -51,10 +51,10 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             
-            var tempMessage: message = draftsMessageMgr.messages.removeAtIndex(indexPath.row)
+            var tempMessage: message = draftsMessageMgr.removeMessage(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage(tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "")
+            trashMessageMgr.addMessage("", receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "", ID_arg: "")
             
             //Update the Table View:
             DraftsMessagesTableView.reloadData()
@@ -92,13 +92,14 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var detail: NavPlace_itViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NavPlace_itViewController") as NavPlace_itViewController
         
         // Assign message details
+        detail.From = draftsMessageMgr.messages[indexPath.row].sender
         detail.To = draftsMessageMgr.messages[indexPath.row].receiver
         detail.Where = draftsMessageMgr.messages[indexPath.row].place
         detail.When = draftsMessageMgr.messages[indexPath.row].time
         detail.What = draftsMessageMgr.messages[indexPath.row].content
         // Here don't pass the time of creating, it will be modified in the next view...
         
-        draftsMessageMgr.messages.removeAtIndex(indexPath.row)
+        draftsMessageMgr.removeMessage(indexPath.row)
         
         // Programmatically push to associated VC (Nav_Place_itViewCOntroller)
         self.navigationController?.pushViewController(detail, animated: true)

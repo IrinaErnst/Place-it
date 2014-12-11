@@ -12,7 +12,7 @@ import AddressBook
 import AddressBookUI
 
 
-class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, ABPeoplePickerNavigationControllerDelegate{
+class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate,ABPeoplePickerNavigationControllerDelegate{
     
     @IBOutlet weak var PhoneNumberLabel: UILabel!
     @IBOutlet weak var PhoneNumberTextField: UITextField!
@@ -26,14 +26,70 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var SendButton: UIButton!
     @IBOutlet weak var BackgroundImageView: UIImageView!
     @IBOutlet weak var AddContactButton: UIButton!
+    @IBOutlet weak var PlacePickerView: UIPickerView!
+    @IBOutlet weak var TimePickerView: UIDatePicker!
     
     
-    var To: String = ""
     var From: String = ""
+    var To: String = ""
     var Where: String = ""
     var When: String = ""
     var What: String = ""
     var realTime: String = ""
+    var id: String = "" // (From+": "+realTime)
+    
+    
+    // Place and date&time picker:
+    var places = ["Blue iBeacon", "Green iBeacon", "Purple iBeacon", "Anywhere"]
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1 // # of spinning wheels
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return places.count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        return places[row]
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        PlaceTextField.text = places[row]
+        PlacePickerView.hidden = true
+    }
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if (textField == PhoneNumberTextField){
+            PlacePickerView.hidden = true
+            TimePickerView.hidden = true
+            return true
+        }
+        else if (textField == PlaceTextField){
+            PlacePickerView.hidden = false
+            TimePickerView.hidden = true
+            PlaceTextField.text = "" // clears text field while picker is visible
+        }
+        else if (textField == TimeTextField){
+            PlacePickerView.hidden = true
+            TimePickerView.hidden = false
+            TimeTextField.text = "" // clears text field while picker is visible
+            TimePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        }
+        return false
+    }
+    //Date picker
+    /*//This brings up date picker as keyboard when time text field is pressed
+    @IBAction func dp(sender: UITextField) {
+        //var datePickerView  : UIDatePicker = UIDatePicker()
+        sender.inputView = TimePickerView
+        TimePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }*/
+    // Puts selected date in text field
+    func handleDatePicker(sender: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy MMM dd hh:mm aaa"
+        TimeTextField.text = dateFormatter.stringFromDate(sender.date)
+        TimePickerView.hidden = true
+    }
+    
     
     // For seguue:
     //var toPass: message = message()
@@ -65,10 +121,15 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // From - implement! This is my number!
         // Real time - implement!
         
-        /* Segue:
-        PhoneNumberTextField.text = toPass.receiver
-        PlaceTextField.text = toPass.place
-        MessageTextView.text = toPass.content*/
+        // Setup for place picker:
+        PlacePickerView.hidden = true
+        PlaceTextField.delegate = self
+        PlacePickerView.delegate = self
+        
+        // Setup for date and time picker:
+        TimePickerView.hidden = true
+        TimeTextField.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -124,9 +185,12 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }
         
         else {
-            sentMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
+            // Save date and time of sending the message:
+            var timeOfCreating = getCurrentDateAndTime()
+            
+            sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: /*MessageTextView.text*/getCurrentDateAndTime(), timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
             // Only for testing Inbox. DELETE LATER:
-            inboxMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
+            //inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
         
         
             // Get rid of the keyboard:
@@ -145,7 +209,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBAction func CancelButton_Clicked(sender: UIButton) {
         
         if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || TimeTextField.text != "" || MessageTextView.text != "") {
-            draftsMessageMgr.addMessage(PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "")
+            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
         }
         
         // Get rid of the keyboard:
