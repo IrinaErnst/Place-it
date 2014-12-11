@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Message" syncable="YES">
+    <entity name="DraftsMessage" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_of_creating" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="InboxMessage" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_of_creating" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SentMessage" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_of_creating" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TrashMessage" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,6 +37,9 @@
         <attribute name="time_of_creating" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="SentMessage" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="DraftsMessage" positionX="-63" positionY="36" width="128" height="148"/>
+        <element name="InboxMessage" positionX="-54" positionY="72" width="128" height="148"/>
+        <element name="TrashMessage" positionX="-36" positionY="99" width="128" height="148"/>
     </elements>
 </model>

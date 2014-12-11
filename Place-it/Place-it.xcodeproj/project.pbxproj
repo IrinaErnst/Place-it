@@ -19,6 +19,10 @@
 		3656CF8A1A321A380004A1F2 /* NavPlace-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */; };
 		36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E021A317EAB00BA4B84 /* To-FromVC.swift */; };
 		36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E041A317EB300BA4B84 /* From-ToVC.swift */; };
+		36BFAB391A3A189700DDF15C /* SentMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB381A3A189700DDF15C /* SentMessageManager.swift */; };
+		36BFAB3C1A3A19F100DDF15C /* DraftsMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB3B1A3A19F100DDF15C /* DraftsMessageManager.swift */; };
+		36BFAB3E1A3A1B6B00DDF15C /* InboxMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB3D1A3A1B6B00DDF15C /* InboxMessageManager.swift */; };
+		36BFAB401A3A1BF000DDF15C /* TrashMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB3F1A3A1BF000DDF15C /* TrashMessageManager.swift */; };
 		36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */; };
 		36CE22201A0A832800E6FFDA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE221F1A0A832800E6FFDA /* InboxViewController.swift */; };
 		36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE22211A0AD48200E6FFDA /* SentViewController.swift */; };
@@ -95,6 +99,10 @@
 		3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavPlace-itViewController.swift"; sourceTree = SOURCE_ROOT; };
 		36575E021A317EAB00BA4B84 /* To-FromVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "To-FromVC.swift"; sourceTree = SOURCE_ROOT; };
 		36575E041A317EB300BA4B84 /* From-ToVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "From-ToVC.swift"; sourceTree = SOURCE_ROOT; };
+		36BFAB381A3A189700DDF15C /* SentMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageManager.swift; sourceTree = "<group>"; };
+		36BFAB3B1A3A19F100DDF15C /* DraftsMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftsMessageManager.swift; sourceTree = "<group>"; };
+		36BFAB3D1A3A1B6B00DDF15C /* InboxMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessageManager.swift; sourceTree = "<group>"; };
+		36BFAB3F1A3A1BF000DDF15C /* TrashMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashMessageManager.swift; sourceTree = "<group>"; };
 		36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraftsViewController.swift; path = ../DraftsViewController.swift; sourceTree = "<group>"; };
 		36CE221F1A0A832800E6FFDA /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InboxViewController.swift; path = ../InboxViewController.swift; sourceTree = "<group>"; };
 		36CE22211A0AD48200E6FFDA /* SentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentViewController.swift; path = ../SentViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +174,10 @@
 				3649C9531A0984DB0058779D /* AppDelegate.swift */,
 				3649C9551A0984DB0058779D /* ViewController.swift */,
 				364E58E21A1D146600A23EAC /* MessageManager.swift */,
+				36BFAB381A3A189700DDF15C /* SentMessageManager.swift */,
+				36BFAB3B1A3A19F100DDF15C /* DraftsMessageManager.swift */,
+				36BFAB3D1A3A1B6B00DDF15C /* InboxMessageManager.swift */,
+				36BFAB3F1A3A1BF000DDF15C /* TrashMessageManager.swift */,
 				3647F5F71A38B1BD009AF6E3 /* PersistenceHelper.swift */,
 				36CE70E81A09D6C000B1E9B4 /* Place-itViewController.swift */,
 				3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */,
@@ -398,10 +410,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BFAB401A3A1BF000DDF15C /* TrashMessageManager.swift in Sources */,
 				36CE22201A0A832800E6FFDA /* InboxViewController.swift in Sources */,
 				3647F5F81A38B1BD009AF6E3 /* PersistenceHelper.swift in Sources */,
 				36CE22241A0AD5CA00E6FFDA /* TrashViewController.swift in Sources */,
 				36CE221E1A0A81B300E6FFDA /* DraftsViewController.swift in Sources */,
+				36BFAB3E1A3A1B6B00DDF15C /* InboxMessageManager.swift in Sources */,
 				36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */,
 				3649C9561A0984DB0058779D /* ViewController.swift in Sources */,
 				3649C9541A0984DB0058779D /* AppDelegate.swift in Sources */,
@@ -411,6 +425,8 @@
 				36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */,
 				36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */,
 				364E58E31A1D146600A23EAC /* MessageManager.swift in Sources */,
+				36BFAB391A3A189700DDF15C /* SentMessageManager.swift in Sources */,
+				36BFAB3C1A3A19F100DDF15C /* DraftsMessageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
