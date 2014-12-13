@@ -3,7 +3,7 @@
 //  Place-it
 //
 //  Created by Ilona Michalowska on 11/4/14.
-//  Modified by Eric Glass on 12/6/2014.
+//  Modified by Eric Glass on 12/6/2014. (Add Contact functionality, i.e. performPickPersonProperty. Fixed by IM)
 //  Copyright (c) 2014 Ilona Michalowska & Irina Kalashnikova. All rights reserved.
 //
 
@@ -161,7 +161,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
                 index).takeRetainedValue() as String
             
             /* Put selected number in text box */
-            PhoneNumberTextField.text = phone
+            PhoneNumberTextField.text = fixPhoneNumber(phone)
     }
     
     
@@ -183,10 +183,18 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             alert.addButtonWithTitle("Ok")
             alert.show()
         }
-        
+        else if ((countElements(phoneNumberStr2Dig(PhoneNumberTextField.text)) != 11)) {
+            var alert: UIAlertView = UIAlertView()
+            alert.title = "The phone number you entered is invalid!"
+            alert.message = "Please enter an 11-digit phone number"
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
         else {
             // Save date and time of sending the message:
             var timeOfCreating = getCurrentDateAndTime()
+            
+            PhoneNumberTextField.text = fixPhoneNumber(PhoneNumberTextField.text)
             
             sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: /*MessageTextView.text*/getCurrentDateAndTime(), timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
             // Only for testing Inbox. DELETE LATER:
@@ -228,6 +236,11 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     // IOS Touch Functions
     // keyboard goes away when click outside of text field
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
+        if (countElements(phoneNumberStr2Dig(PhoneNumberTextField.text)) == 11){
+            PhoneNumberTextField.text = fixPhoneNumber(PhoneNumberTextField.text)
+        }
+        
         self.view.endEditing(true)
     }
     

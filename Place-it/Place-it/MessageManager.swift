@@ -27,7 +27,7 @@ var sentMessageMgr: SentMessageManager = SentMessageManager()
 var draftsMessageMgr: DraftsMessageManager = DraftsMessageManager()
 var trashMessageMgr: TrashMessageManager = TrashMessageManager()
 
-var myPhoneNumber = "(917) 744-8550"
+
 
 // Function to get current date and time:
 func getCurrentDateAndTime() -> String {
