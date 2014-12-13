@@ -1,0 +1,104 @@
+// ********************************************************************************************
+//
+// Algorithm for communicating with Redis
+//
+// Created by Ilona Michalowska on 12/12/2014
+//
+// ********************************************************************************************
+
+
+1. Message is sent from the phone to the server
+________________________________________________
+
+// Create String variables:
+
+string sender, receiver, place, time, content, realTime, messageID
+
+
+// These are the parameters from JSON (all are strings):
+sender_par
+receiver_par
+place_par
+time_par
+content_par
+realTime_par
+
+// Save parameters from JSON in variables:
+
+sender = sender_par
+receiver = receiver_par
+place = place_par
+time = time_par
+content = content_par
+realTime = relTime_par
+
+// Create IDs for hashing in Redis:
+messageID = sender + realTime
+phoneBeaconID = sender + place
+
+// *** Ruby-Redis magic happens here ***
+
+
+// Add message to Messages # Table:
+Assumption: the names of hash fields are: sen, rec, pla, tim, con, rti
+
+redis> HMSET messageID sen sender rec receiver pla place tim time con conent rti realTime
+OK // returned value (from Redis)
+
+// Add message to Phone Beacon LIST. If a list doesn't exist, it will be created. If it exists, messageID will be pushed:
+
+redis> LPUSH phoneBeaconID messageID
+(integer) 1 // Redis returns the length of the list after pushing
+
+
+2. Message is requested by the phone
+____________________________________
+
+// These is the parameter from JSON (string):
+phoneBeaconID_par
+
+// Save the parameter in a variable, say:
+phoneBeaconID = phoneBeaconID_par
+
+// Pop an elements (messageIDs) from the Phone Beacon List:
+redis> LPOP phoneBeaconID
+"9177448550 2014/12/12 12:23:34 PM" // Redis returns our messageID
+
+// IMPORTANT: if there is no message for us, the list doesn't exist, so Redis will return NIL, rather than a messageID
+
+// Let's save this string and lets get the message from the Messages # Table (if the returned value was not NIL):
+// We can either get values for a field after a field or values for all fields at once (whatever is more convenient)
+// 1st way: value after value
+
+redis> HGET messageID sen
+"9177448550"
+redis> HGET messageID rec
+"9176866441"
+.
+.
+.
+redis> HGET messageID rti
+"2014/12/12 12:23:34 PM"
+
+// 2nd way: all values at once
+redis> HGETALL messageID
+1) "9177448550"
+2) "9176866441"
+.
+.
+.
+6) "2014/12/12 12:23:34 PM"
+
+// Now it is time to save these strings in variables and/or send them back to the phone. Yay!
+// While using lists, we don't need to worry about deleting elements that are sent back to the phone, 
+// it is done for us, when we pop an element from the list.
+
+
+
+
+
+
+
+
+
+

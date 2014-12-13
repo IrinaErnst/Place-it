@@ -52,6 +52,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //                println(response)
 //                println(data)
                 println(data!["name"])
+                var message:String = data!["name"] as String
+                inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: myPhoneNumber, place_arg: "", time_arg: getCurrentDateAndTime(), content_arg: message, timeOfCreating_arg: "", ID_arg: "")
 //                println(error)
               }
         

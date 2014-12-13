@@ -717,6 +717,12 @@
                                             <action selector="performPickPersonProperty:" destination="L7s-uD-F2L" eventType="touchUpInside" id="Azi-GE-aRx"/>
                                         </connections>
                                     </button>
+                                    <datePicker alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-sn-D3h">
+                                        <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="440008646.47410202">
+                                            <!--2014-12-11 16:37:26 +0000-->
+                                        </date>
+                                    </datePicker>
                                     <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk5-PD-yTB">
                                         <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                         <connections>
@@ -724,12 +730,6 @@
                                             <outlet property="delegate" destination="L7s-uD-F2L" id="1Io-Jb-co6"/>
                                         </connections>
                                     </pickerView>
-                                    <datePicker alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-sn-D3h">
-                                        <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="440008646.47410202">
-                                            <!--2014-12-11 16:37:26 +0000-->
-                                        </date>
-                                    </datePicker>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="8mf-be-nk7" firstAttribute="top" secondItem="1Cy-WW-ToT" secondAttribute="top" constant="20" id="0KI-My-i3a"/>
@@ -784,8 +784,8 @@
                                         <exclude reference="66r-rl-9N9"/>
                                         <exclude reference="Iju-pH-vwV"/>
                                         <exclude reference="eES-zD-mHN"/>
-                                        <exclude reference="Nk5-PD-yTB"/>
                                         <exclude reference="zZy-sn-D3h"/>
+                                        <exclude reference="Nk5-PD-yTB"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="78u-mW-5eW"/>
@@ -835,8 +835,8 @@
                                         <include reference="66r-rl-9N9"/>
                                         <include reference="Iju-pH-vwV"/>
                                         <include reference="eES-zD-mHN"/>
-                                        <include reference="Nk5-PD-yTB"/>
                                         <include reference="zZy-sn-D3h"/>
+                                        <include reference="Nk5-PD-yTB"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="78u-mW-5eW"/>
@@ -1206,48 +1206,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIM-ay-jus" userLabel="MessageView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Message Text View" translatesAutoresizingMaskIntoConstraints="NO" id="624-h6-c84" userLabel="MessageTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="Uxb-E0-Obs" id="ISu-ST-KxY"/>
-                                        </connections>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="624-h6-c84" firstAttribute="top" secondItem="VIM-ay-jus" secondAttribute="top" id="5kr-Nl-sVt"/>
-                                    <constraint firstAttribute="trailing" secondItem="624-h6-c84" secondAttribute="trailing" id="Lft-j7-Gnn"/>
-                                    <constraint firstItem="624-h6-c84" firstAttribute="leading" secondItem="VIM-ay-jus" secondAttribute="leading" id="Ot7-cX-jle"/>
-                                    <constraint firstAttribute="bottom" secondItem="624-h6-c84" secondAttribute="bottom" id="zNM-QW-IYA"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="624-h6-c84"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="5kr-Nl-sVt"/>
-                                        <exclude reference="Lft-j7-Gnn"/>
-                                        <exclude reference="Ot7-cX-jle"/>
-                                        <exclude reference="zNM-QW-IYA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="624-h6-c84"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="5kr-Nl-sVt"/>
-                                        <include reference="Lft-j7-Gnn"/>
-                                        <include reference="Ot7-cX-jle"/>
-                                        <include reference="zNM-QW-IYA"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wwp-Sw-rJu" userLabel="DetailsView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -1565,6 +1523,48 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIM-ay-jus" userLabel="MessageView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Message Text View" translatesAutoresizingMaskIntoConstraints="NO" id="624-h6-c84" userLabel="MessageTextView">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Uxb-E0-Obs" id="ISu-ST-KxY"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="624-h6-c84" firstAttribute="top" secondItem="VIM-ay-jus" secondAttribute="top" id="5kr-Nl-sVt"/>
+                                    <constraint firstAttribute="trailing" secondItem="624-h6-c84" secondAttribute="trailing" id="Lft-j7-Gnn"/>
+                                    <constraint firstItem="624-h6-c84" firstAttribute="leading" secondItem="VIM-ay-jus" secondAttribute="leading" id="Ot7-cX-jle"/>
+                                    <constraint firstAttribute="bottom" secondItem="624-h6-c84" secondAttribute="bottom" id="zNM-QW-IYA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="624-h6-c84"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="5kr-Nl-sVt"/>
+                                        <exclude reference="Lft-j7-Gnn"/>
+                                        <exclude reference="Ot7-cX-jle"/>
+                                        <exclude reference="zNM-QW-IYA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="624-h6-c84"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="5kr-Nl-sVt"/>
+                                        <include reference="Lft-j7-Gnn"/>
+                                        <include reference="Ot7-cX-jle"/>
+                                        <include reference="zNM-QW-IYA"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1578,8 +1578,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="VIM-ay-jus"/>
                                 <exclude reference="Wwp-Sw-rJu"/>
+                                <exclude reference="VIM-ay-jus"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3cm-Rj-NmP"/>
@@ -1593,8 +1593,8 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="VIM-ay-jus"/>
                                 <include reference="Wwp-Sw-rJu"/>
+                                <include reference="VIM-ay-jus"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="3cm-Rj-NmP"/>
