@@ -33,14 +33,15 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     var From: String = ""
     var To: String = ""
     var Where: String = ""
-    var When: String = ""
+    var When: String = "N/A"
     var What: String = ""
     var realTime: String = ""
     var id: String = "" // (From+": "+realTime)
     
     
     // Place and date&time picker:
-    var places = ["Blue iBeacon", "Green iBeacon", "Purple iBeacon", "Anywhere"]
+    var places = ["Forest Hills 71st Str", "Flying Pig Pub", "Home", "Anywhere"]
+    // Translation: ["Blue iBeacon", "Green iBeacon", "Purple iBeacon", "Anywhere"]
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
         return 1 // # of spinning wheels
@@ -74,6 +75,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }
         return false
     }
+    
     //Date picker
     /*//This brings up date picker as keyboard when time text field is pressed
     @IBAction func dp(sender: UITextField) {
@@ -196,10 +198,15 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             
             PhoneNumberTextField.text = fixPhoneNumber(PhoneNumberTextField.text)
             
-            sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: /*MessageTextView.text*/getCurrentDateAndTime(), timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
+            sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
             // Only for testing Inbox. DELETE LATER:
             //inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
         
+            // *****************************************************************************************
+            
+            // Connect with the server here and in NavPlace-itViewController
+            
+            // *****************************************************************************************
         
             // Get rid of the keyboard:
             self.view.endEditing(true)
@@ -207,7 +214,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             // Clear text fields
             PhoneNumberTextField.text = ""
             PlaceTextField.text = ""
-            TimeTextField.text = ""
+            TimeTextField.text = "N/A"
             MessageTextView.text = ""
         
             // Once the message is sent, stay in the Place-it view
@@ -216,8 +223,12 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBAction func CancelButton_Clicked(sender: UIButton) {
         
-        if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || TimeTextField.text != "" || MessageTextView.text != "") {
-            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
+        if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || TimeTextField.text != "N/A" || MessageTextView.text != "") {
+            
+            // Save date and time of saving the message:
+            var timeOfCreating = getCurrentDateAndTime()
+            
+            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
         }
         
         // Get rid of the keyboard:
@@ -226,7 +237,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
         // Clear text fields
         PhoneNumberTextField.text = ""
         PlaceTextField.text = ""
-        TimeTextField.text = ""
+        TimeTextField.text = "N/A"
         MessageTextView.text = ""
         
         // Once the message is saved in Drafts, jump back to the Main view

@@ -54,7 +54,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var tempMessage: message = draftsMessageMgr.removeMessage(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage("", receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "", ID_arg: "")
+            trashMessageMgr.addMessage(tempMessage.sender, receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: tempMessage.timeOfCreating, ID_arg: tempMessage.ID)
             
             //Update the Table View:
             DraftsMessagesTableView.reloadData()

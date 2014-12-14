@@ -20,6 +20,7 @@ class To_FromVC: UIViewController {
     @IBOutlet weak var TimeDisplayLabel: UILabel!
     @IBOutlet weak var MessageTextView: UITextView!
     // outlet for real time
+    @IBOutlet weak var realTimeLabel: UILabel!
     
     
     var From: String = ""
@@ -40,7 +41,7 @@ class To_FromVC: UIViewController {
         TimeDisplayLabel.text = When
         MessageTextView.text = What
         // Display time of creation:
-        // sth ??? = realTime
+        realTimeLabel.text = realTime
         
         // Assign NavBar title
         self.title = To

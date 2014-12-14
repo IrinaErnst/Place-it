@@ -86,8 +86,7 @@ class TrashViewController: UIViewController {
         detail.Where = trashMessageMgr.messages[indexPath.row].place
         detail.When = trashMessageMgr.messages[indexPath.row].time
         detail.What = trashMessageMgr.messages[indexPath.row].content
-        // display time of creating
-        // detail.realTime = ""
+        detail.realTime = "Sent on: " + trashMessageMgr.messages[indexPath.row].timeOfCreating
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)

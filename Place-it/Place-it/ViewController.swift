@@ -46,6 +46,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let closestBeacon = knownBeacons[0] as CLBeacon
 //            println(closestBeacon.minor.integerValue)
 
+            // translate beacons here
+            
+            var beacon_id = closestBeacon.proximityUUID.UUIDString
+            var maj_val = closestBeacon.major
+            var min_val = closestBeacon.minor
+            
+            // create server inqiry parameter (myPhoneNumber + beacon)
+            
+            
             Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["beacon_id": closestBeacon.proximityUUID.UUIDString, "maj_val": closestBeacon.major, "min_val": closestBeacon.minor])
               .responseJSON { (request, response, data, error) in
 //                println(request)
@@ -53,9 +62,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //                println(data)
                 println(data!["name"])
                 var message:String = data!["name"] as String
-                inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: myPhoneNumber, place_arg: "", time_arg: getCurrentDateAndTime(), content_arg: message, timeOfCreating_arg: "", ID_arg: "")
 //                println(error)
               }
+            
+            // save message in Inbox
+            // inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: myPhoneNumber, place_arg: "", time_arg: getCurrentDateAndTime(), content_arg: message, timeOfCreating_arg: "", ID_arg: "")
+
+            // display notification
+            
         
         }
     }

@@ -33,7 +33,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     var From: String = ""
     var To: String = ""
     var Where: String = ""
-    var When: String = ""
+    var When: String = "N/A"
     var What: String = ""
     var realTime: String = ""
     var id: String = "" // (From+": "+realTime)
@@ -189,13 +189,20 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             // Only for testing Inbox. DELETE LATER:
             //inboxMessageMgr.addMessage("", receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
     
+            // *****************************************************************************************
+            
+            // Connect with the server here and in Place-itViewController
+            
+            // *****************************************************************************************
+            
+            
             // Get rid of the keyboard:
             self.view.endEditing(true)
     
             // Clear text fields - do we need to do this??
             PhoneNumberTextField.text = ""
             PlaceTextField.text = ""
-            TimeTextField.text = ""
+            TimeTextField.text = "N/A"
             MessageTextView.text = ""
     
             // Once the message is sent, jump back to the Main view
@@ -205,8 +212,12 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     // Clicking Cancel saves changes!
     @IBAction func CancelBarButton_Clicked(sender: UIBarButtonItem) {
-        if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || MessageTextView.text != "") {
-            draftsMessageMgr.addMessage("", receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
+        if (PhoneNumberTextField.text != "" || PlaceTextField.text != "" || TimeTextField.text != "N/A" || MessageTextView.text != "")  {
+            
+            // Save date and time of saving the message:
+            var timeOfCreating = getCurrentDateAndTime()
+            
+            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
         }
     
         // Get rid of the keyboard:
@@ -215,7 +226,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
         // Clear text fields - do we need to do this??
         PhoneNumberTextField.text = ""
         PlaceTextField.text = ""
-        TimeTextField.text = ""
+        TimeTextField.text = "N/A"
         MessageTextView.text = ""
     
         // Once the message is saved in Drafts, jump back to the Main view

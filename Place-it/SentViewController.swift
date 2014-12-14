@@ -45,7 +45,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
             var tempMessage: message = sentMessageMgr.removeMessage(indexPath.row)
             
             // Append tempMessage to Trash array
-            trashMessageMgr.addMessage("", receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: "", ID_arg: "")
+            trashMessageMgr.addMessage(tempMessage.sender, receiver_arg: tempMessage.receiver, place_arg: tempMessage.place, time_arg: tempMessage.time, content_arg: tempMessage.content, timeOfCreating_arg: tempMessage.timeOfCreating, ID_arg: tempMessage.ID)
             
             //Update the Table View:
             MessagesTableView.reloadData()
@@ -88,8 +88,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         detail.Where = sentMessageMgr.messages[indexPath.row].place
         detail.When = sentMessageMgr.messages[indexPath.row].time
         detail.What = sentMessageMgr.messages[indexPath.row].content
-        // display time of creating
-        // detail.realTime = ""
+        detail.realTime = "Sent on: " + sentMessageMgr.messages[indexPath.row].timeOfCreating
         
         // Programmatically push to associated VC (To-FromVC)
         self.navigationController?.pushViewController(detail, animated: true)
