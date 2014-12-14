@@ -19,7 +19,6 @@
 		3656CF8A1A321A380004A1F2 /* NavPlace-itViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */; };
 		36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E021A317EAB00BA4B84 /* To-FromVC.swift */; };
 		36575E051A317EB300BA4B84 /* From-ToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36575E041A317EB300BA4B84 /* From-ToVC.swift */; };
-		367F0C641A3E05B500EDBB99 /* BeaconTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F0C631A3E05B500EDBB99 /* BeaconTranslator.swift */; };
 		36A6FC751A3CCF25008FDB8B /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6FC741A3CCF25008FDB8B /* WelcomeVC.swift */; };
 		36BFAB391A3A189700DDF15C /* SentMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB381A3A189700DDF15C /* SentMessageManager.swift */; };
 		36BFAB3C1A3A19F100DDF15C /* DraftsMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFAB3B1A3A19F100DDF15C /* DraftsMessageManager.swift */; };
@@ -101,7 +100,6 @@
 		3656CF891A321A380004A1F2 /* NavPlace-itViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavPlace-itViewController.swift"; sourceTree = SOURCE_ROOT; };
 		36575E021A317EAB00BA4B84 /* To-FromVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "To-FromVC.swift"; sourceTree = SOURCE_ROOT; };
 		36575E041A317EB300BA4B84 /* From-ToVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "From-ToVC.swift"; sourceTree = SOURCE_ROOT; };
-		367F0C631A3E05B500EDBB99 /* BeaconTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTranslator.swift; sourceTree = "<group>"; };
 		36A6FC741A3CCF25008FDB8B /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		36BFAB381A3A189700DDF15C /* SentMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageManager.swift; sourceTree = "<group>"; };
 		36BFAB3B1A3A19F100DDF15C /* DraftsMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftsMessageManager.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				36CE221D1A0A81B300E6FFDA /* DraftsViewController.swift */,
 				36575E041A317EB300BA4B84 /* From-ToVC.swift */,
 				36575E021A317EAB00BA4B84 /* To-FromVC.swift */,
-				367F0C631A3E05B500EDBB99 /* BeaconTranslator.swift */,
 				3649C9571A0984DB0058779D /* Main.storyboard */,
 				36D7238D1A32C881007195AF /* Place-it.xcdatamodeld */,
 				3649C95A1A0984DB0058779D /* Images.xcassets */,
@@ -429,7 +426,6 @@
 				36CE22221A0AD48200E6FFDA /* SentViewController.swift in Sources */,
 				36D7238F1A32C881007195AF /* Place-it.xcdatamodeld in Sources */,
 				36CE70E91A09D6C000B1E9B4 /* Place-itViewController.swift in Sources */,
-				367F0C641A3E05B500EDBB99 /* BeaconTranslator.swift in Sources */,
 				36575E031A317EAB00BA4B84 /* To-FromVC.swift in Sources */,
 				364E58E31A1D146600A23EAC /* MessageManager.swift in Sources */,
 				36A6FC751A3CCF25008FDB8B /* WelcomeVC.swift in Sources */,

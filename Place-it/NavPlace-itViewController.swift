@@ -10,6 +10,7 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+import Alamofire
 
 
 class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate,ABPeoplePickerNavigationControllerDelegate{
@@ -40,7 +41,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     
     // Place and date&time picker:
-    var places = ["Blue iBeacon", "Green iBeacon", "Purple iBeacon", "Anywhere"]
+    // var places = ["Blue iBeacon", "Green iBeacon", "Purple iBeacon", "Anywhere"]
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
         return 1 // # of spinning wheels
@@ -185,7 +186,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             
             PhoneNumberTextField.text = fixPhoneNumber(PhoneNumberTextField.text)
             
-            sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: /*TimeTextField.text*/getCurrentDateAndTime(), content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
+            sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: /*TimeTextField.text*/getCurrentDateAndTime(), content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + timeOfCreating)
             // Only for testing Inbox. DELETE LATER:
             //inboxMessageMgr.addMessage("", receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
     
@@ -193,6 +194,18 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             
             // Connect with the server here and in Place-itViewController
             
+            // Send inquiry to the server:
+            /*
+            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["sender":myPhoneNumber, "receiver":PhoneNumberTextField.text, "place": PlaceTextField.text, "time": TimeTextField.text, "content": MessageTextView.text, "realTime": timeOfCreating, "messageID": myPhoneNumber + timeOfCreating])
+                .responseJSON { (request, response, data, error) in
+                    //                println(request)
+                    //                println(response)
+                    //                println(data)
+                    println(data!["name"])
+                    var message:String = data!["name"] as String
+                    //                println(error)
+            }
+            */
             // *****************************************************************************************
             
             
@@ -217,7 +230,7 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             // Save date and time of saving the message:
             var timeOfCreating = getCurrentDateAndTime()
             
-            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + " " + timeOfCreating)
+            draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + timeOfCreating)
         }
     
         // Get rid of the keyboard:

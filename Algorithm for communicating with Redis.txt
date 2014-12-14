@@ -12,16 +12,17 @@ ________________________________________________
 
 // Create String variables:
 
-string sender, receiver, place, time, content, realTime, messageID
+string sender, receiver, place, time, content, realTime, messageID, phoneBeaconID
 
 
 // These are the parameters from JSON (all are strings):
-sender_par
-receiver_par
-place_par
-time_par
-content_par
-realTime_par
+1. sender_par
+2. receiver_par
+3. place_par
+4. time_par
+5. content_par
+6. realTime_par
+7. messageID_par
 
 // Save parameters from JSON in variables:
 
@@ -31,18 +32,18 @@ place = place_par
 time = time_par
 content = content_par
 realTime = relTime_par
+messageID = messageID_par // this is the key for hashing the message in the Messages # Table
 
-// Create IDs for hashing in Redis:
-messageID = sender + realTime
+// Produce the phoneBeaconID - this is the key for the Phone Beacon LIST
 phoneBeaconID = sender + place
 
 // *** Ruby-Redis magic happens here ***
 
 
 // Add message to Messages # Table:
-Assumption: the names of hash fields are: sen, rec, pla, tim, con, rti
+Assumption: the names of hash fields are: sen, rec, pla, tim, con, rti, mid
 
-redis> HMSET messageID sen sender rec receiver pla place tim time con conent rti realTime
+redis> HMSET messageID sen sender rec receiver pla place tim time con content rti realTime mid messageID
 OK // returned value (from Redis)
 
 // Add message to Phone Beacon LIST. If a list doesn't exist, it will be created. If it exists, messageID will be pushed:
@@ -71,25 +72,29 @@ redis> LPOP phoneBeaconID
 // 1st way: value after value
 
 redis> HGET messageID sen
-"9177448550"
+“+1 (917) 744-8550"
 redis> HGET messageID rec
-"9176866441"
+“+1 (917) 686-6441"
 .
 .
 .
 redis> HGET messageID rti
 "2014/12/12 12:23:34 PM"
+redis> HGET messageID mid
+"+1 (917) 744-85502014/12/12 12:23:34 PM"
 
 // 2nd way: all values at once
 redis> HGETALL messageID
-1) "9177448550"
-2) "9176866441"
+1) "+1 (917) 744-8550"
+2) "+1 (917) 686-6441"
 .
 .
 .
 6) "2014/12/12 12:23:34 PM"
+7) "+1 (917) 744-85502014/12/12 12:23:34 PM"
 
-// Now it is time to save these strings in variables and/or send them back to the phone. Yay!
+
+// Now it is time to save these 7 strings in variables and/or send them back to the phone. Yay!
 // While using lists, we don't need to worry about deleting elements that are sent back to the phone, 
 // it is done for us, when we pop an element from the list.
 
