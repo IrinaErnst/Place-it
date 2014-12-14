@@ -58,6 +58,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
+        
+        // display notification:
+        var notification: UILocalNotification = UILocalNotification()
+        notification.category = "FIRST_CATEGORY"
+        notification.alertBody = "Hi, I am a notification"
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

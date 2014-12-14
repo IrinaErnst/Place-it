@@ -194,7 +194,6 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             
             // Connect with the server here and in Place-itViewController
             
-            // Send inquiry to the server:
             /*
             Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["sender":myPhoneNumber, "receiver":PhoneNumberTextField.text, "place": PlaceTextField.text, "time": TimeTextField.text, "content": MessageTextView.text, "realTime": timeOfCreating, "messageID": myPhoneNumber + timeOfCreating])
                 .responseJSON { (request, response, data, error) in
