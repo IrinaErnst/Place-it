@@ -19,7 +19,6 @@ class PersistenceHelper: NSObject {
     }
     
     
-    // here add more paramaters - maybe? +name, desc+
     func save(entity: String, parameters: Dictionary<String,String>) -> Bool{
         
         var newEntity = NSEntityDescription.insertNewObjectForEntityForName(entity, inManagedObjectContext: context) as NSManagedObject
@@ -38,7 +37,7 @@ class PersistenceHelper: NSObject {
         return results
     }
     
-    // key here too...
+    
     func remove(entity:String, key:String, value:String) -> Bool{
         
         var request = NSFetchRequest(entityName: entity)

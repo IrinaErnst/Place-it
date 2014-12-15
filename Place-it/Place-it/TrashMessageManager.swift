@@ -18,7 +18,9 @@ class TrashMessageManager: NSObject {
         var tempMessages: NSArray = persistenceHelper.list("TrashMessage") // Reference data model
         
         for res:AnyObject in tempMessages{
-            messages.append(message(sender:res.valueForKey("sender") as String, receiver:res.valueForKey("receiver") as String, place:res.valueForKey("place") as String, time:res.valueForKey("time") as String, content:res.valueForKey("content") as String, timeOfCreating:res.valueForKey("time_of_creating") as String, ID:res.valueForKey("id") as String))
+            if (res.valueForKey("sender") as String == myPhoneNumber || res.valueForKey("receiver") as String == myPhoneNumber) {
+                messages.append(message(sender:res.valueForKey("sender") as String, receiver:res.valueForKey("receiver") as String, place:res.valueForKey("place") as String, time:res.valueForKey("time") as String, content:res.valueForKey("content") as String, timeOfCreating:res.valueForKey("time_of_creating") as String, ID:res.valueForKey("id") as String))
+            }
         }
     }
     

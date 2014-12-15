@@ -229,6 +229,10 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             // Save date and time of saving the message:
             var timeOfCreating = getCurrentDateAndTime()
             
+            if (countElements(phoneNumberStr2Dig(PhoneNumberTextField.text)) == 11) {
+                PhoneNumberTextField.text = fixPhoneNumber(PhoneNumberTextField.text)
+            }
+            
             draftsMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + timeOfCreating)
         }
     
