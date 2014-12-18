@@ -206,18 +206,20 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             // *****************************************************************************************
             
             // Connect with the server here and in NavPlace-itViewController
+            //    key = "m|#{params[:UUID]}|#{params[:major]}|#{params[:minor]}|#{params[:receiver]}|#{timestamp}"
+            //value = {"sender"=>"#{params[:sender]}","message"=>"#{params[:message]}","created_at"=>"#{timestamp}"}
+
             
-            /*
-            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["sender":myPhoneNumber, "receiver":PhoneNumberTextField.text, "place": PlaceTextField.text, "time": TimeTextField.text, "content": MessageTextView.text, "realTime": timeOfCreating, "messageID": myPhoneNumber + timeOfCreating])
+            Alamofire.request(.POST, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["UUID": beacon_uuid,"major": maj_val,"minor": min_val,"receiver": PhoneNumberTextField.text, "sender":myPhoneNumber, "message": MessageTextView.text])
                 .responseJSON { (request, response, data, error) in
                     //                println(request)
                     //                println(response)
                     //                println(data)
-                    println(data!["name"])
-                    var message:String = data!["name"] as String
+                    //println(data!["content"])
+                    //var message:String = data!["content"] as String
                     //                println(error)
             }
-            */
+        
             
             // *****************************************************************************************
         

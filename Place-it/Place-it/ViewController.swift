@@ -126,7 +126,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // Irina, please describe the parameters sent back to Xcode from the server
 
             
+            
             */
+            
+            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters:["UUID": beacon_uuid,"major": maj_val,"minor": min_val,"receiver": PhoneNumberTextField.text])
+                .responseJSON { (request, response, data, error) in
+                    //                println(request)
+                    //                println(response)
+                    println(data)
+                    //println(data!["name"])
+                    //var message:String = data!["name"] as String
+                    //                println(error)
+            }
+
+            
             // if?
             // save message in Inbox
             // inboxMessageMgr.addMessage(___, receiver_arg: ___, place_arg: ___, time_arg: ___, content_arg: ___, timeOfCreating_arg: ___, ID_arg: ___)
