@@ -10,7 +10,9 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-
+var g_beacon_uuid: String!
+var g_maj_val: NSNumber!
+var g_min_val: NSNumber!
 
 
 // Places associated with beacons
@@ -101,6 +103,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             var min_val: NSNumber = closestBeacon.minor
             var phoneBeaconID = myPhoneNumber + beaconParameters2placeName(beacon_uuid, maj_val, min_val)
             
+            g_beacon_uuid = beacon_uuid
+            g_maj_val = maj_val
+            g_min_val = min_val
+            
             /*
             var alert: UIAlertView = UIAlertView()
             alert.title = "I see a beacon!"
@@ -129,7 +135,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             */
             
-            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters:["UUID": beacon_uuid,"major": maj_val,"minor": min_val,"receiver": PhoneNumberTextField.text])
+            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters:["UUID": beacon_uuid,"major": maj_val,"minor": min_val,"receiver": myPhoneNumber])
                 .responseJSON { (request, response, data, error) in
                     //                println(request)
                     //                println(response)
@@ -137,15 +143,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     //println(data!["name"])
                     //var message:String = data!["name"] as String
                     //                println(error)
-            }
-
             
+
+                    //var sender: String = data!["sender"] as String
+                    //var receiver: String = data!["receiver"] as String
+                    //var place: String = beaconParameters2placeName(beacon_uuid, maj_val, min_val)
+                    //var message: String = data!["message"] as String
+                    //var realTime: String = data!["created_at"] as String
             // if?
             // save message in Inbox
-            // inboxMessageMgr.addMessage(___, receiver_arg: ___, place_arg: ___, time_arg: ___, content_arg: ___, timeOfCreating_arg: ___, ID_arg: ___)
-
+            //inboxMessageMgr.addMessage(""/*sender*/, receiver_arg: ""/*receiver*/, place_arg: ""/*place*/, time_arg: "N/A", content_arg: message, timeOfCreating_arg: ""/*realTime*/, ID_arg: ""/*sender + realTime*/)
+                    
             // *****************************************************************************************
-            
+            /*
             // Notification (should be wrapped in if statement too!)
             var localNotification:UILocalNotification = UILocalNotification()
             
@@ -155,7 +165,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             localNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
             
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            
+            */
+            }
         
         }
     }

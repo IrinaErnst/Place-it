@@ -170,14 +170,14 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             var alert: UIAlertView = UIAlertView()
             alert.title = "Place-it can not be sent!"
             alert.message = "Specify receiver of your message"
-            alert.addButtonWithTitle("Ok")
+            alert.addButtonWithTitle("OK")
             alert.show()
         }
         else if ((countElements(phoneNumberStr2Dig(PhoneNumberTextField.text)) != 11)) {
             var alert: UIAlertView = UIAlertView()
             alert.title = "The phone number you entered is invalid!"
             alert.message = "Please enter an 11-digit phone number"
-            alert.addButtonWithTitle("Ok")
+            alert.addButtonWithTitle("OK")
             alert.show()
         }
         else {
@@ -194,22 +194,22 @@ class NavPlace_itViewController: UIViewController, UITextFieldDelegate, UITextVi
             
             // Connect with the server here and in Place-itViewController
             //  key = "m|#{params[:UUID]}|#{params[:major]}|#{params[:minor]}|#{params[:receiver]}|#{timestamp}"
-            /*
-            Alamofire.request(.GET, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["sender":myPhoneNumber, "receiver":PhoneNumberTextField.text, "place": PlaceTextField.text, "time": TimeTextField.text, "content": MessageTextView.text, "realTime": timeOfCreating, "messageID": myPhoneNumber + timeOfCreating])
-                .responseJSON { (request, response, data, error) in
-                    //                println(request)
-                    //                println(response)
-                    //                println(data)
-                    println(data!["name"])
-                    var message:String = data!["name"] as String
-                    //                println(error)
-            }*/
             
-            
+                Alamofire.request(.POST, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["UUID": g_beacon_uuid,"major": g_maj_val,"minor": g_min_val,"receiver": PhoneNumberTextField.text, "sender":myPhoneNumber, "message": MessageTextView.text])
+                    .responseJSON { (request, response, data, error) in
+//                println(request)
+//                println(response)
+//                println(data)
+//println(data!["content"])
+//var message:String = data!["content"] as String
+//                println(error)
+                }
+
+
 
             // *****************************************************************************************
-            
-            
+
+
             // Get rid of the keyboard:
             self.view.endEditing(true)
     

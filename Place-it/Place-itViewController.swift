@@ -183,14 +183,14 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             var alert: UIAlertView = UIAlertView()
             alert.title = "Place-it can not be sent!"
             alert.message = "Specify receiver of your message"
-            alert.addButtonWithTitle("Ok")
+            alert.addButtonWithTitle("OK")
             alert.show()
         }
         else if ((countElements(phoneNumberStr2Dig(PhoneNumberTextField.text)) != 11)) {
             var alert: UIAlertView = UIAlertView()
             alert.title = "The phone number you entered is invalid!"
             alert.message = "Please enter an 11-digit phone number"
-            alert.addButtonWithTitle("Ok")
+            alert.addButtonWithTitle("OK")
             alert.show()
         }
         else {
@@ -210,7 +210,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             //value = {"sender"=>"#{params[:sender]}","message"=>"#{params[:message]}","created_at"=>"#{timestamp}"}
 
             
-            Alamofire.request(.POST, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["UUID": beacon_uuid,"major": maj_val,"minor": min_val,"receiver": PhoneNumberTextField.text, "sender":myPhoneNumber, "message": MessageTextView.text])
+            Alamofire.request(.POST, "http://frozen-shelf-4349.herokuapp.com/beacons.json", parameters: ["UUID": g_beacon_uuid,"major": g_maj_val,"minor": g_min_val,"receiver": PhoneNumberTextField.text, "sender":myPhoneNumber, "message": MessageTextView.text])
                 .responseJSON { (request, response, data, error) in
                     //                println(request)
                     //                println(response)
