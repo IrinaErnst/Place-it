@@ -79,7 +79,7 @@ class DraftsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // might be incorrect...
         cell_d.textLabel?.text = draftsMessageMgr.messages[indexPath.row].receiver
         cell_d.detailTextLabel?.text = draftsMessageMgr.messages[indexPath.row].content
-        // display date of creation?
+        cell_d.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell_d
     }

@@ -68,7 +68,7 @@ class TrashViewController: UIViewController {
         // might be incorrect...
         cell_t.textLabel?.text = trashMessageMgr.messages[indexPath.row].receiver
         cell_t.detailTextLabel?.text = trashMessageMgr.messages[indexPath.row].content
-        // display date of creation?
+        cell_t.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell_t
     }

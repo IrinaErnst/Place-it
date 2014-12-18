@@ -69,7 +69,7 @@ class InboxViewController: UIViewController {
         // might be incorrect...
         cell_i.textLabel?.text = inboxMessageMgr.messages[indexPath.row].sender
         cell_i.detailTextLabel?.text = inboxMessageMgr.messages[indexPath.row].content
-        // display date of creation?
+        cell_i.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell_i
     }

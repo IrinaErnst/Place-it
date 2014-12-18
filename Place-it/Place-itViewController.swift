@@ -201,7 +201,7 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             
             sentMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + timeOfCreating)
             // Only for testing Inbox. DELETE LATER:
-            //inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: "", ID_arg: "")
+            //inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: PhoneNumberTextField.text, place_arg: PlaceTextField.text, time_arg: TimeTextField.text, content_arg: MessageTextView.text, timeOfCreating_arg: timeOfCreating, ID_arg: myPhoneNumber + timeOfCreating)
         
             // *****************************************************************************************
             
@@ -231,8 +231,11 @@ class Place_itViewController: UIViewController, UITextFieldDelegate, UITextViewD
             MessageTextView.text = ""
         
             // Once the message is sent, stay in the Place-it view
+            
         }
     }
+    
+
     
     @IBAction func CancelButton_Clicked(sender: UIButton) {
         

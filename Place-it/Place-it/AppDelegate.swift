@@ -17,57 +17,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager:CLLocationManager?
     var lastProximity: CLProximity?
     
+    
     // Notifications set up here:
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         
         // Actions:
-        var firstAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-        firstAction.identifier = "FIRST_ACTION"
-        firstAction.title = "First Action"
         
-        firstAction.activationMode = UIUserNotificationActivationMode.Background
-        firstAction.destructive = true
-        firstAction.authenticationRequired = false
         
-        var secondAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-        secondAction.identifier = "SECOND_ACTION"
-        secondAction.title = "Second Action"
+        var closeNotificationAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        closeNotificationAction.identifier = "CLOSE_NOTIFICATION_ACTION"
+        closeNotificationAction.title = "Close"
         
-        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
-        secondAction.destructive = false
-        secondAction.authenticationRequired = false
+        closeNotificationAction.activationMode = UIUserNotificationActivationMode.Background
+        closeNotificationAction.destructive = true
+        closeNotificationAction.authenticationRequired = false
         
-        var thirdAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-        thirdAction.identifier = "THIRD_ACTION"
-        thirdAction.title = "Third Action"
+        var viewMessageAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        viewMessageAction.identifier = "VIEW_MESSAGE_ACTION"
+        viewMessageAction.title = "Open Place-it"
         
-        thirdAction.activationMode = UIUserNotificationActivationMode.Background
-        thirdAction.destructive = false
-        thirdAction.authenticationRequired = false
+        viewMessageAction.activationMode = UIUserNotificationActivationMode.Foreground
+        viewMessageAction.destructive = false
+        viewMessageAction.authenticationRequired = false
+        
         
         // Category:
-        var firstCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
-        firstCategory.identifier = "FIRST_CATEGORY"
+        var newMessageCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        newMessageCategory.identifier = "NEW_MESSAGE_CATEGORY"
         
-        let defaultActions: NSArray = [firstAction, secondAction, thirdAction]
-        let minimalActions: NSArray = [firstAction, secondAction]
-        firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
-        firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
+        let defaultActions: NSArray = [viewMessageAction, closeNotificationAction]
+        let minimalActions: NSArray = [viewMessageAction, closeNotificationAction]
+        newMessageCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
+        newMessageCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
         
         // NSSet of all our categories:
-        
-        let categories:NSSet = NSSet(object: firstCategory)
-        
-        
+        let categories:NSSet = NSSet(object: newMessageCategory)
         
         let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
         
-        let mySettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        let mySettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: categories)
         
         UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
         
-        
         return true
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        if ( identifier == "CLOSE_NOTIFICATION_ACTION" ){
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("actionClosePressed", object: nil)
+            
+        }
+        else if (identifier == "VIEW_MESSAGE_ACTION" ){
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("actionViewPressed", object: nil)
+            
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {

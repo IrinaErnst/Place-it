@@ -51,34 +51,48 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // for beacons detection:
         locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() !=  CLAuthorizationStatus.AuthorizedWhenInUse)
-        {
-            locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Authorized) {
+            locationManager.requestAlwaysAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
         
-        // display notification:
-        var notification: UILocalNotification = UILocalNotification()
-        notification.category = "FIRST_CATEGORY"
-        notification.alertBody = "Hi, I am a notification"
+/*
+        // Notification:
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewMessage", name: "actionViewPressed", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "doNothing", name: "actionCancelPressed", object: nil)
+        
+        var localNotification:UILocalNotification = UILocalNotification()
+        
+        localNotification.category = "NEW_MESSAGE_CATEGORY"
+        localNotification.alertBody = "You've got a new Place-it message"
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+*/        
         
     }
+    
+
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!)
     {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown}
-        if (knownBeacons.count > 0)
-        {
+        if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
-//            println(closestBeacon.minor.integerValue)
 
             // Translate beacons and produce parameter to inquiry the server for messages:
             
@@ -87,7 +101,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             var min_val: NSNumber = closestBeacon.minor
             var phoneBeaconID = myPhoneNumber + beaconParameters2placeName(beacon_uuid, maj_val, min_val)
             
+            /*
+            var alert: UIAlertView = UIAlertView()
+            alert.title = "I see a beacon!"
+            alert.message = "This is " + beaconParameters2placeName(beacon_uuid, maj_val, min_val)
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+            */
             
+            // *****************************************************************************************
             
             // Send inquiry to the server:
             /*
@@ -100,11 +122,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 var message:String = data!["name"] as String
 //                println(error)
               }
-            */
-            // save message in Inbox
-            // inboxMessageMgr.addMessage(myPhoneNumber, receiver_arg: myPhoneNumber, place_arg: "", time_arg: getCurrentDateAndTime(), content_arg: message, timeOfCreating_arg: "", ID_arg: "")
+            
+            // Irina, please describe the parameters sent back to Xcode from the server
 
-            // display notification
+            
+            */
+            // if?
+            // save message in Inbox
+            // inboxMessageMgr.addMessage(___, receiver_arg: ___, place_arg: ___, time_arg: ___, content_arg: ___, timeOfCreating_arg: ___, ID_arg: ___)
+
+            // *****************************************************************************************
+            
+            // Notification (should be wrapped in if statement too!)
+            var localNotification:UILocalNotification = UILocalNotification()
+            
+            localNotification.category = "NEW_MESSAGE_CATEGORY"
+            localNotification.alertBody = "You received a new Place-it message"
+            localNotification.soundName = UILocalNotificationDefaultSoundName
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             
         
         }

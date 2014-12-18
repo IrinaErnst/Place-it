@@ -70,7 +70,7 @@ class SentViewController: UIViewController, UITableViewDelegate, UITableViewData
         // might be incorrect...
         cell.textLabel?.text = sentMessageMgr.messages[indexPath.row].receiver
         cell.detailTextLabel?.text = sentMessageMgr.messages[indexPath.row].content
-        // display date of creation?
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
     }
